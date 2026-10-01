@@ -31,7 +31,7 @@ export default function Navbar() {
         key={href}
         href={href}
         aria-current={active ? "page" : undefined}
-        className={`rounded-full px-3 py-2 font-ui text-[0.82rem] font-semibold no-underline transition ${
+        className={`shrink-0 whitespace-nowrap rounded-full px-2.5 py-2 font-ui text-[0.76rem] font-semibold no-underline transition ${
           active
             ? "bg-hcof-gold-soft text-hcof-ink"
             : "text-hcof-text hover:bg-hcof-mist hover:text-hcof-ink"
@@ -44,9 +44,9 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-hcof-ink/10 bg-hcof-paper/95 backdrop-blur">
-      <Container className="flex min-h-[72px] items-center gap-3">
+      <Container wide className="flex min-h-[72px] items-center gap-2">
         <Link
-          className="mr-auto flex items-center gap-3 font-ui text-sm font-bold tracking-[0.08em] text-hcof-ink no-underline"
+          className="mr-3 flex shrink-0 items-center gap-3 font-ui text-sm font-bold tracking-[0.08em] text-hcof-ink no-underline"
           href="/"
           aria-label="HCOF"
         >
@@ -60,12 +60,15 @@ export default function Navbar() {
           HCOF
         </Link>
 
-        <nav className="hidden items-center gap-1 xl:flex" aria-label="Main navigation">
+        <nav
+          className="hidden flex-1 items-center justify-center gap-0.5 min-[1350px]:flex"
+          aria-label="Main navigation"
+        >
           {navLinks}
         </nav>
 
         <div
-          className="flex items-center gap-1 rounded-full border border-hcof-ink/10 p-1"
+          className="ml-auto flex shrink-0 items-center gap-1 rounded-full border border-hcof-ink/10 p-1 min-[1350px]:ml-2"
           role="group"
           aria-label={intl.formatMessage({ id: "nav.language" })}
         >
@@ -86,7 +89,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        <details className="relative xl:hidden">
+        <details className="relative min-[1350px]:hidden">
           <summary className="cursor-pointer list-none rounded-full border border-hcof-ink/10 px-3 py-2 font-ui text-xs font-semibold text-hcof-ink">
             {intl.formatMessage({ id: "nav.menu" })}
           </summary>
