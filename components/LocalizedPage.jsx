@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useIntl } from "react-intl";
 import Container from "./Container";
+import ContactForm from "./ContactForm";
 import { EN_PAGE_CONTENT } from "../i18n/pageContent.en";
 import { FR_PAGE_CONTENT } from "../i18n/pageContent.fr";
 
@@ -42,6 +43,7 @@ export default function LocalizedPage({ pageKey }) {
               className="localized-section"
               dangerouslySetInnerHTML={{ __html: section.html }}
             />
+            {pageKey === "contact" && index === 1 ? <ContactForm /> : null}
           </Container>
         </section>
       ))}
