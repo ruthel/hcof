@@ -75,7 +75,7 @@ export const EN_PAGE_CONTENT = {
       },
       {
         "className": "",
-        "html": "<!-- TODO dev: replace YOUR_ID with a Formspree (or equivalent) ID -->\n <form action=\"https://formspree.io/f/YOUR_ID\" method=\"post\">\n  <label for=\"n\">Name</label><input id=\"n\" name=\"name\" required autocomplete=\"name\">\n  <label for=\"e\">Email</label><input id=\"e\" name=\"email\" type=\"email\" required autocomplete=\"email\">\n  <label for=\"s\">Subject</label>\n  <select id=\"s\" name=\"subject\"><option>Volunteering</option><option>Partnership</option><option>Giving</option><option>Press</option><option>Other</option></select>\n  <label for=\"m\">Message</label><textarea id=\"m\" name=\"message\" rows=\"5\" required></textarea>\n  <button class=\"btn green\" type=\"submit\">Send</button>\n </form>\n <p class=\"mt-6\">Head office: Douala, Littoral region, Cameroon. [official email and phone to add]</p>"
+        "html": "<h2>Send us a message</h2>\n<p>Use the form below to contact HCOF. Your message will be delivered directly to our contact mailbox.</p>\n<p class=\"mt-8\">Head office: Douala, Littoral region, Cameroon.</p>"
       },
       {
         "className": "alt",
