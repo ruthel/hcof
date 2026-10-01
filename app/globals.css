@@ -321,3 +321,141 @@
     transition-duration: 0s !important;
   }
 }
+
+
+@layer components {
+  .grid-wide {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .grid-media {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .media-card {
+    @apply m-0 overflow-hidden rounded-2xl border border-hcof-ink/10 bg-white shadow-[0_10px_30px_rgba(16,63,45,.08)];
+  }
+
+  .media-preview {
+    @apply grid min-h-52 place-items-center p-6;
+  }
+
+  .media-preview-light {
+    @apply bg-white;
+  }
+
+  .media-preview-dark {
+    @apply bg-hcof-ink;
+  }
+
+  .media-logo {
+    @apply mx-auto block max-h-44 w-auto object-contain;
+  }
+
+  .media-card figcaption {
+    @apply border-t border-hcof-ink/10 px-5 py-4 font-body text-sm leading-6 text-hcof-muted;
+  }
+
+  .media-card figcaption strong {
+    @apply font-ui text-hcof-ink;
+  }
+
+  .media-card figcaption a {
+    @apply font-ui text-xs font-semibold;
+  }
+
+  .swatches {
+    @apply mt-6 flex flex-wrap gap-4;
+  }
+
+  .swatch-item {
+    @apply min-w-28;
+  }
+
+  .swatch {
+    @apply h-[70px] w-[120px] rounded-xl border border-hcof-ink/10 shadow-sm;
+  }
+
+  .swatch-ink { background: #103F2D; }
+  .swatch-leaf { background: #3F6E38; }
+  .swatch-gold { background: #C68D1C; }
+  .swatch-mist { background: #EEF3EC; }
+
+  .swatch-item small {
+    @apply mt-2 block font-ui text-[0.7rem] leading-5 text-hcof-muted;
+  }
+
+  .pagehead::after {
+    left: max(1.25rem, calc((100vw - 1180px) / 2 + 2rem));
+  }
+
+  .hero h1 {
+    font-size: clamp(3.25rem, 7vw, 6.25rem);
+  }
+
+  .hero .lead {
+    @apply max-w-[640px];
+  }
+
+  .localized-section > p:first-child {
+    @apply text-[1.03rem] leading-8;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: clamp(2.5rem, 13vw, 4rem);
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 9vw, 2.65rem);
+  }
+
+  h3 {
+    font-size: 1.28rem;
+  }
+
+  section {
+    @apply py-12;
+  }
+
+  .hero {
+    @apply py-16;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 15vw, 4.6rem);
+    line-height: .94;
+  }
+
+  .hero .lead {
+    @apply text-base leading-7;
+  }
+
+  .pagehead {
+    @apply py-12;
+  }
+
+  .pagehead p {
+    @apply text-base leading-7;
+  }
+
+  .grid-wide,
+  .grid-media {
+    grid-template-columns: 1fr;
+  }
+
+  .item,
+  .box,
+  form {
+    @apply p-5;
+  }
+
+  .media-preview {
+    @apply min-h-44 p-5;
+  }
+
+  .media-logo {
+    @apply max-h-36;
+  }
+}
