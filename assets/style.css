@@ -8,8 +8,8 @@
   --paper:#FFFFFF;
   --text:#1B2B24;
   --muted:#4F625A;
-  --serif:'Fraunces',Georgia,serif;
-  --sans:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --serif:var(--font-fraunces),Georgia,serif;
+  --sans:var(--font-montserrat),system-ui,-apple-system,'Segoe UI',sans-serif;
   --pad:clamp(1.25rem,5vw,4rem);
 }
 *{box-sizing:border-box}
