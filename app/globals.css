@@ -440,6 +440,26 @@
     @apply max-w-[940px];
   }
 
+  .institution-current {
+    @apply my-8 max-w-[820px] border-y border-hcof-ink/15 py-7;
+  }
+
+  .institution-current h3 {
+    @apply mb-3;
+  }
+
+  .institution-grid {
+    @apply mt-10;
+  }
+
+  .institution-foundation {
+    @apply mt-8 max-w-[820px];
+  }
+
+  .document-list {
+    @apply mt-10 md:grid-cols-2;
+  }
+
   /* Hope's City */
   .page-hopes-city section[data-section="1"] .grid {
     @apply mt-12 md:grid-cols-2 lg:grid-cols-4;
