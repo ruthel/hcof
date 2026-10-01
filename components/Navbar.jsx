@@ -23,32 +23,76 @@ export default function Navbar() {
   const intl = useIntl();
   const { locale, setLocale } = useLocale();
 
-  const navLinks = links.map(([href, id]) => (
-    <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined}>
-      {intl.formatMessage({ id })}
-    </Link>
-  ));
+  const navLinks = links.map(([href, id]) => {
+    const active = pathname === href;
+
+    return (
+      <Link
+        key={href}
+        href={href}
+        aria-current={active ? "page" : undefined}
+        className={`rounded-full px-3 py-2 font-ui text-[0.82rem] font-semibold no-underline transition ${
+          active
+            ? "bg-hcof-gold-soft text-hcof-ink"
+            : "text-hcof-text hover:bg-hcof-mist hover:text-hcof-ink"
+        }`}
+      >
+        {intl.formatMessage({ id })}
+      </Link>
+    );
+  });
 
   return (
-    <header className="site">
-      <Container className="nav-container">
-        <Link className="brand" href="/" aria-label="HCOF">
-          <img src="/assets/logo-icon.jpg" alt="" width="190" height="185" />
+    <header className="sticky top-0 z-40 border-b border-hcof-ink/10 bg-hcof-paper/95 backdrop-blur">
+      <Container className="flex min-h-[72px] items-center gap-3">
+        <Link
+          className="mr-auto flex items-center gap-3 font-ui text-sm font-bold tracking-[0.08em] text-hcof-ink no-underline"
+          href="/"
+          aria-label="HCOF"
+        >
+          <img
+            src="/assets/logo-icon.jpg"
+            alt=""
+            width="190"
+            height="185"
+            className="h-11 w-11 rounded-full object-contain"
+          />
           HCOF
         </Link>
 
-        <nav className="main" aria-label="Main navigation">
+        <nav className="hidden items-center gap-1 xl:flex" aria-label="Main navigation">
           {navLinks}
         </nav>
 
-        <div className="language-switcher" role="group" aria-label={intl.formatMessage({ id: "nav.language" })}>
-          <button type="button" onClick={() => setLocale("en")} aria-pressed={locale === "en"}>EN</button>
-          <button type="button" onClick={() => setLocale("fr")} aria-pressed={locale === "fr"}>FR</button>
+        <div
+          className="flex items-center gap-1 rounded-full border border-hcof-ink/10 p-1"
+          role="group"
+          aria-label={intl.formatMessage({ id: "nav.language" })}
+        >
+          {["en", "fr"].map((item) => (
+            <button
+              key={item}
+              type="button"
+              onClick={() => setLocale(item)}
+              aria-pressed={locale === item}
+              className={`rounded-full px-2.5 py-1.5 font-ui text-[0.68rem] font-bold transition ${
+                locale === item
+                  ? "bg-hcof-ink text-white"
+                  : "bg-transparent text-hcof-ink hover:bg-hcof-mist"
+              }`}
+            >
+              {item.toUpperCase()}
+            </button>
+          ))}
         </div>
 
-        <details className="menu">
-          <summary>{intl.formatMessage({ id: "nav.menu" })}</summary>
-          <div className="panel">{navLinks}</div>
+        <details className="relative xl:hidden">
+          <summary className="cursor-pointer list-none rounded-full border border-hcof-ink/10 px-3 py-2 font-ui text-xs font-semibold text-hcof-ink">
+            {intl.formatMessage({ id: "nav.menu" })}
+          </summary>
+          <div className="absolute right-0 top-12 grid min-w-64 gap-1 rounded-2xl border border-hcof-ink/10 bg-white p-3 shadow-[0_20px_50px_rgba(16,63,45,.15)]">
+            {navLinks}
+          </div>
         </details>
       </Container>
     </header>
