@@ -24,6 +24,26 @@ export const EN_PAGE_CONTENT = {
       {
         "className": "pagehead",
         "html": "<h1>Who we are</h1><p>A Christian association born from a calling, carried by clear values.</p>"
+      },
+      {
+        "className": "",
+        "html": "\n <h2>Our story</h2>\n <p>HCOF was born from a calling in 2021, carried by its founder, Landry MBOM: the conviction that God is the Father of orphans and the Defender of widows, and that He calls His people to show this love in a concrete and organized way.</p>\n <p>The association is established in Douala in 2027. From the start, it aims to be more than a shelter: an institutional ministry with a generational vision, turning broken lives into living testimonies of God's grace.</p>\n <div class=\"verse\">“Religion that God our Father accepts as pure and faultless is this: to look after orphans and widows in their distress.”<cite>James 1:27</cite></div>\n"
+      },
+      {
+        "className": "alt",
+        "html": "\n <h2>Vision and mission</h2>\n <div class=\"grid\">\n  <div class=\"item\"><h3>Vision</h3><p>To help spread the message of Christ's love everywhere, in a world that does not believe it. In practice: feed, teach, protect, restore.</p></div>\n  <div class=\"item\"><h3>Mission</h3><p>To restore to the least privileged and the rejected the basic needs, spiritual, social and psychological, that they require to flourish.</p></div>\n  <div class=\"item\"><h3>Mandate</h3><p>To wipe the tears of God's people from a painful past and give them back hope and a smile.</p></div>\n </div>\n"
+      },
+      {
+        "className": "",
+        "html": "\n <h2>Our values</h2>\n <div class=\"grid\">\n  <div class=\"item\"><h3>Human dignity</h3><p>Every person we serve is made in God's image and deserves absolute respect.</p></div>\n  <div class=\"item\"><h3>Compassion</h3><p>We serve with a heart moved by the suffering of others.</p></div>\n  <div class=\"item\"><h3>Humility</h3><p>We recognize that every good thing comes from God alone.</p></div>\n  <div class=\"item\"><h3>Excellence</h3><p>We give our best in everything we do.</p></div>\n  <div class=\"item\"><h3>Impartiality</h3><p>We serve without distinction of ethnicity, region or social status.</p></div>\n  <div class=\"item\"><h3>Integrity</h3><p>Our actions are consistent with our faith and our commitments.</p></div>\n </div>\n"
+      },
+      {
+        "className": "alt",
+        "html": "\n <h2>The Vision Bearer</h2>\n <p>Landry MBOM, founder of HCOF, is originally from Cameroon and now lives in Canada. He holds the conviction that Africa's future is built by those who choose to invest their time, skills and faith there.</p>\n <div class=\"verse\">\n  <!-- TODO founder: review and personalize this message (add a personal story and a photo) -->\n  <p>Some callings are not ours to choose. In 2021, I received the call to serve orphans and widows, as Scripture invites us to. I now live far from Cameroon, but I have never stopped believing that it is at home, with our own people, that our children's future is built.</p>\n  <p>HCOF starts small, because we want to do well what we promise: feed, support schooling, relieve hardship. We will announce nothing we have not truly done, and we will account for every gift.</p>\n  <p>Hope's City remains a long-term dream. I would rather we be judged on what we accomplish tomorrow morning than on what we hope for in twenty years.</p>\n  <p>If you believe that every child deserves a future, join us.</p>\n  <cite>Landry MBOM, Vision Bearer</cite>\n </div>\n"
+      },
+      {
+        "className": "",
+        "html": "\n <h2>Governance</h2>\n <p>A light structure at the start, designed to grow with the organization.</p>\n <ul class=\"facts\">\n  <li><strong>Management committee (CODIR):</strong> three members, president, secretary general and treasurer, in charge of day-to-day management.</li>\n  <li><strong>General assembly:</strong> six members, who follow and advise the association's work.</li>\n  <li><strong>Accounts:</strong> closed every 31 December, with an annual financial report. An external audit may be requested.</li>\n </ul>\n <p>The statutes comply with Cameroonian law no. 90/053 of 19 December 1990. <!-- TODO: link the statutes PDF once the final version is adopted --></p>\n"
       }
     ]
   },
