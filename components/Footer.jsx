@@ -41,6 +41,7 @@ export default function Footer() {
               <li><Link className="text-white no-underline hover:underline" href="/child-protection">{t("footer.childProtection")}</Link></li>
               <li><Link className="text-white no-underline hover:underline" href="/media-kit">{t("footer.mediaKit")}</Link></li>
               <li><Link className="text-white no-underline hover:underline" href="/give">{t("footer.accountability")}</Link></li>
+              <li><Link className="text-white no-underline hover:underline" href="/about#documents">{t("footer.transparency")}</Link></li>
               <li><Link className="text-white no-underline hover:underline" href="/legal">{t("footer.legal")}</Link></li>
             </ul>
           </div>
