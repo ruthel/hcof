@@ -30,11 +30,12 @@ export default function LocalizedPage({ pageKey }) {
   if (!page) return null;
 
   return (
-    <main id="main">
+    <main id="main" className={`page page-${pageKey}`}>
       {page.sections.map((section, index) => (
         <section
           key={`${pageKey}-${locale}-${index}`}
           className={section.className || undefined}
+          data-section={index}
         >
           <Container>
             <div
