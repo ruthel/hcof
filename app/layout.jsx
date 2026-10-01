@@ -1,18 +1,25 @@
-import "../assets/style.css";
-import { Fraunces, Montserrat } from "next/font/google";
+import "./globals.css";
+import { Cormorant_Garamond, Manrope, Sora } from "next/font/google";
 import I18nProvider from "../components/I18nProvider";
 import SiteChrome from "../components/SiteChrome";
 
-const montserrat = Montserrat({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-manrope",
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const sora = Sora({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-sora",
   display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  display: "swap",
+  weight: ["500", "600", "700"],
 });
 
 export const metadata = {
@@ -23,7 +30,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${fraunces.variable}`}>
+    <html
+      lang="en"
+      className={`${manrope.variable} ${sora.variable} ${cormorant.variable}`}
+    >
       <body>
         <I18nProvider>
           <SiteChrome>{children}</SiteChrome>
