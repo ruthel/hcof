@@ -88,3 +88,5 @@ footer.site .cols{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,mi
 footer.site h3{color:#fff;font-size:1rem;font-family:var(--sans)}
 footer.site ul{list-style:none;padding:0;margin:0;display:grid;gap:.4rem}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* English-only deployment */
+.lang{display:none!important}
