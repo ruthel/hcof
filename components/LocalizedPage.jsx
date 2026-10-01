@@ -1,34 +1,67 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
 import Container from "./Container";
-import { PAGE_DEFINITIONS } from "../i18n/pageDefinitions";
-import { PAGE_CONTENT, PAGE_META } from "../i18n/pageContent";
+
+function normalizeLinks(html) {
+  return html
+    .replace(/(src|href)="\.\.\/assets\//g, '$1="/assets/')
+    .replace(/href="index\.html(#[^"]*)?"/g, (_, hash = "") => `href="/${hash}"`)
+    .replace(/href="([a-z0-9-]+)\.html(#[^"]*)?"/gi, (_, slug, hash = "") => `href="/${slug}${hash}"`);
+}
 
 export default function LocalizedPage({ pageKey }) {
   const intl = useIntl();
   const locale = intl.locale === "fr" ? "fr" : "en";
-  const sections = PAGE_DEFINITIONS[pageKey] ?? [];
-  const content = PAGE_CONTENT[locale]?.[pageKey] ?? PAGE_CONTENT.en[pageKey] ?? [];
-  const meta = PAGE_META[locale]?.[pageKey] ?? PAGE_META.en[pageKey];
+  const [sections, setSections] = useState([]);
 
   useEffect(() => {
-    if (!meta) return;
-    document.title = meta.title;
-    const description = document.querySelector('meta[name="description"]');
-    if (description && meta.description) description.setAttribute("content", meta.description);
-  }, [meta]);
+    let active = true;
+    const file = pageKey === "index" ? "index.html" : `${pageKey}.html`;
+
+    fetch(`/content/${locale}/${file}`)
+      .then((response) => {
+        if (!response.ok) throw new Error(`Unable to load ${file}`);
+        return response.text();
+      })
+      .then((source) => {
+        if (!active) return;
+
+        const doc = new DOMParser().parseFromString(source, "text/html");
+        const title = doc.querySelector("title")?.textContent?.trim();
+        const description = doc.querySelector('meta[name="description"]')?.getAttribute("content");
+
+        if (title) document.title = title;
+        if (description) {
+          document.querySelector('meta[name="description"]')?.setAttribute("content", description);
+        }
+
+        const parsed = [...doc.querySelectorAll("main#main > section")].map((section) => {
+          const wrap = section.querySelector(":scope > .wrap");
+          return {
+            className: section.className || "",
+            html: normalizeLinks((wrap || section).innerHTML),
+          };
+        });
+
+        setSections(parsed);
+      })
+      .catch(() => {
+        if (active) setSections([]);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [locale, pageKey]);
 
   return (
-    <main id="main">
-      {sections.map((section) => (
-        <section key={`${pageKey}-${section.index}`} className={section.className || undefined}>
+    <main id="main" className={sections.length ? undefined : "page-loading"}>
+      {sections.map((section, index) => (
+        <section key={`${pageKey}-${locale}-${index}`} className={section.className || undefined}>
           <Container>
-            <div
-              className="localized-section"
-              dangerouslySetInnerHTML={{ __html: content[section.index] ?? "" }}
-            />
+            <div className="localized-section" dangerouslySetInnerHTML={{ __html: section.html }} />
           </Container>
         </section>
       ))}
