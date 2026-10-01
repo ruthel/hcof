@@ -1,0 +1,90 @@
+/* HCOF — feuille de style. Les couleurs et polices se changent dans :root */
+:root{
+  --ink:#103F2D;      /* vert profond du logo */
+  --leaf:#3F6E38;     /* vert feuille du logo */
+  --gold:#C68D1C;     /* or de la flamme */
+  --gold-soft:#F3E3BC;
+  --mist:#EEF3EC;
+  --paper:#FFFFFF;
+  --text:#1B2B24;
+  --muted:#4F625A;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --pad:clamp(1.25rem,5vw,4rem);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:400 1.0625rem/1.65 var(--sans);color:var(--text);background:var(--paper)}
+img{max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .6em;color:var(--ink)}
+h1{font-size:clamp(2.2rem,6vw,4rem)}
+h2{font-size:clamp(1.7rem,3.6vw,2.4rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1em;max-width:68ch}
+a{color:var(--leaf)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem;z-index:99}
+section{padding:clamp(2.75rem,7vw,5.5rem) var(--pad)}
+.wrap{max-width:1080px;margin:0 auto}
+.alt{background:var(--mist)}
+/* En-tête */
+header.site{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid #d7e2d6;display:flex;align-items:center;gap:1rem;padding:.55rem var(--pad)}
+.brand{display:flex;align-items:center;gap:.6rem;font:700 1.15rem var(--serif);color:var(--ink);text-decoration:none;margin-right:auto}
+.brand img{height:46px;width:auto;mix-blend-mode:multiply}
+nav.main{display:none;gap:.95rem;font-size:.88rem;white-space:nowrap}
+nav.main a{color:var(--text);text-decoration:none;padding:.2rem 0;border-bottom:2px solid transparent}
+nav.main a:hover,nav.main a[aria-current]{border-bottom-color:var(--gold)}
+@media(min-width:1240px){nav.main{display:flex}}
+.lang a{font:600 .85rem var(--sans);border:1px solid var(--ink);color:var(--ink);padding:.3rem .6rem;text-decoration:none}
+.lang a[aria-current]{background:var(--ink);color:#fff}
+details.menu{position:relative}
+details.menu summary{cursor:pointer;font-weight:600;list-style:none;padding:.3rem .5rem}
+details.menu .panel{position:absolute;right:0;top:2.3rem;background:#fff;border:1px solid #cfdccd;padding:.6rem 1rem;display:grid;gap:.45rem;min-width:13rem;box-shadow:0 8px 24px rgba(16,63,45,.12)}
+details.menu a{color:var(--text);text-decoration:none;padding:.2rem 0}
+@media(min-width:1240px){details.menu{display:none}}
+/* Bandeau de statut */
+.status{background:var(--ink);color:#fff;font-size:.9rem;padding:.5rem var(--pad);text-align:center}
+/* Héros */
+.hero{background:var(--ink);color:#fff;padding-top:clamp(3.5rem,10vw,7rem);padding-bottom:clamp(3.5rem,10vw,7rem)}
+.hero h1{color:#fff;max-width:16ch}
+.hero .lead{font-size:1.25rem;color:#dbe8dd}
+.hero .motto{font-family:var(--serif);font-style:italic;color:var(--gold-soft);margin-top:2rem}
+.pagehead{background:var(--mist);padding-top:clamp(2.5rem,6vw,4.5rem);padding-bottom:clamp(2rem,5vw,3.5rem);border-bottom:4px solid var(--gold)}
+.pagehead p{font-size:1.15rem;color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;font-weight:600;text-decoration:none;border:2px solid var(--gold);background:var(--gold);color:var(--ink);cursor:pointer;font:600 1rem var(--sans)}
+.btn.ghost{background:none;color:inherit;border-color:currentColor}
+.btn.green{background:var(--leaf);border-color:var(--leaf);color:#fff}
+/* Statuts de phase : le cœur de la transparence */
+.tag{display:inline-block;font:600 .8rem var(--sans);padding:.15rem .65rem;border-radius:99px;margin-bottom:.6rem}
+.t-now{background:var(--leaf);color:#fff}
+.t-next{background:var(--gold-soft);color:#5b3f00}
+.t-vision{border:1.5px dashed var(--ink);color:var(--ink);background:#fff}
+.grid{display:grid;gap:1.75rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.item{border-top:4px solid var(--gold);padding-top:1rem}
+.item.v{border-top:4px dashed var(--ink)}
+.verse{border-left:4px solid var(--gold);padding:.4rem 0 .4rem 1.2rem;font-family:var(--serif);font-style:italic;font-size:1.2rem;max-width:60ch;margin:1.5rem 0}
+.verse cite{display:block;font:600 .9rem var(--sans);font-style:normal;color:var(--muted);margin-top:.4rem}
+/* Parcours : vraie séquence */
+ol.road{list-style:none;padding:0;margin:2rem 0 0;display:grid;gap:1.5rem;counter-reset:s}
+ol.road li{counter-increment:s;padding-left:3.4rem;position:relative}
+ol.road li::before{content:counter(s);position:absolute;left:0;top:0;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700}
+ol.road li.now::before{background:var(--leaf);box-shadow:0 0 0 4px var(--gold-soft)}
+ol.road li.vision::before{background:#fff;color:var(--ink);border:2px dashed var(--ink)}
+ol.road h3{margin-bottom:.3em}
+.box{border:2px dashed #8aa597;padding:1.4rem;background:#fff;max-width:68ch}
+.facts{display:grid;gap:.4rem;padding:0;list-style:none;margin:1rem 0}
+.facts li{padding-left:1.4rem;position:relative}
+.facts li::before{content:"";position:absolute;left:0;top:.7em;width:.6rem;height:.6rem;background:var(--gold);border-radius:50%}
+/* Formulaires */
+form{display:grid;gap:.9rem;max-width:540px}
+label{font-weight:600;font-size:.95rem}
+input,textarea,select{width:100%;font:inherit;padding:.7rem;border:1.5px solid #8aa597;background:#fff;color:var(--text)}
+details.faq{border-bottom:1px solid #cfdccd;padding:.9rem 0;max-width:760px}
+details.faq summary{cursor:pointer;font-weight:600}
+footer.site{background:var(--ink);color:#d3e2d6;padding:3rem var(--pad) 2rem;font-size:.95rem}
+footer.site a{color:#fff}
+footer.site .cols{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:2rem}
+footer.site h3{color:#fff;font-size:1rem;font-family:var(--sans)}
+footer.site ul{list-style:none;padding:0;margin:0;display:grid;gap:.4rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
