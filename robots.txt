@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# Ajouter la ligne Sitemap: https://VOTRE-DOMAINE/sitemap.xml
