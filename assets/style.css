@@ -558,3 +558,86 @@ footer.site a:hover{
 @media(prefers-reduced-motion:reduce){
   .btn,.item,nav.main a{transition:none}
 }
+
+
+/* ===== Shared Next.js containers & i18n ===== */
+.container{
+  width:100%;
+  max-width:1180px;
+  margin-inline:auto;
+}
+
+.localized-section{
+  width:100%;
+}
+
+section > .container > .localized-section > h2{
+  max-width:760px;
+  letter-spacing:-.035em;
+}
+
+section > .container > .localized-section > h2 + p{
+  color:var(--muted);
+  font-size:1.08rem;
+  max-width:720px;
+  margin-bottom:2rem;
+}
+
+header.site{
+  display:block;
+}
+
+.nav-container{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
+.hero .container{
+  position:relative;
+}
+
+.language-switcher{
+  display:flex;
+  align-items:center;
+  padding:.2rem;
+  border:1px solid var(--line);
+  border-radius:999px;
+  gap:.15rem;
+  margin-left:.25rem;
+}
+
+.language-switcher button{
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--ink);
+  font:700 .72rem var(--sans);
+  cursor:pointer;
+  border-radius:999px;
+  padding:.38rem .55rem;
+}
+
+.language-switcher button[aria-pressed="true"]{
+  background:var(--ink);
+  color:var(--paper);
+}
+
+.status .container{
+  text-align:center;
+}
+
+.footer-container > img{
+  width:min(320px,75vw);
+  border-radius:12px;
+}
+
+.footer-legal{
+  margin-top:2rem;
+}
+
+@media(max-width:760px){
+  .language-switcher{
+    margin-left:auto;
+  }
+}
