@@ -24,6 +24,26 @@ export const FR_PAGE_CONTENT = {
       {
         "className": "pagehead",
         "html": "<h1>Qui sommes-nous</h1><p>Une association chrétienne née d'un appel, portée par des valeurs claires.</p>"
+      },
+      {
+        "className": "",
+        "html": "\n <h2>Notre histoire</h2>\n <p>HCOF est née d'un appel en 2021, porté par son fondateur, Landry MBOM : la conviction que Dieu est le Père des orphelins et le Défenseur des veuves, et qu'il appelle son peuple à manifester cet amour de façon concrète et organisée.</p>\n <p>L'association est constituée à Douala en 2027. Dès l'origine, elle se veut plus qu'une structure d'accueil : un ministère institutionnel à vocation générationnelle, pour transformer des vies brisées en témoignages vivants de la grâce de Dieu.</p>\n <div class=\"verse\">« La religion pure et sans tache, devant Dieu notre Père, consiste à visiter les orphelins et les veuves dans leurs afflictions. »<cite>Jacques 1:27</cite></div>\n"
+      },
+      {
+        "className": "alt",
+        "html": "\n <h2>Vision et mission</h2>\n <div class=\"grid\">\n  <div class=\"item\"><h3>Vision</h3><p>Faciliter la propagation du message d'amour du Christ partout dans un monde qui n'y croit pas. Concrètement : nourrir, instruire, protéger, relever.</p></div>\n  <div class=\"item\"><h3>Mission</h3><p>Restituer aux moins privilégiés et aux rejetés les besoins élémentaires, sur les plans spirituel, social et psychologique, nécessaires à leur plein épanouissement.</p></div>\n  <div class=\"item\"><h3>Mandat</h3><p>Essuyer les larmes du peuple de Dieu d'un passé douloureux et lui redonner l'espoir et le sourire.</p></div>\n </div>\n"
+      },
+      {
+        "className": "",
+        "html": "\n <h2>Nos valeurs</h2>\n <div class=\"grid\">\n  <div class=\"item\"><h3>Dignité humaine</h3><p>Toute personne accueillie est créée à l'image de Dieu et mérite un respect absolu.</p></div>\n  <div class=\"item\"><h3>Compassion</h3><p>Nous servons avec un cœur touché par la souffrance de l'autre.</p></div>\n  <div class=\"item\"><h3>Humilité</h3><p>Nous reconnaissons que tout bien vient de Dieu seul.</p></div>\n  <div class=\"item\"><h3>Excellence</h3><p>Nous offrons le meilleur de nous-mêmes dans toutes nos actions.</p></div>\n  <div class=\"item\"><h3>Impartialité</h3><p>Nous servons sans distinction d'ethnie, de région ou de statut social.</p></div>\n  <div class=\"item\"><h3>Intégrité</h3><p>Nos actes sont cohérents avec notre foi et nos engagements.</p></div>\n </div>\n"
+      },
+      {
+        "className": "alt",
+        "html": "\n <h2>Le Porteur de Vision</h2>\n <p>Landry MBOM, fondateur de HCOF, est originaire du Cameroun et vit aujourd'hui au Canada. Il porte la conviction que l'avenir de l'Afrique se construit par ceux qui choisissent d'y investir leur temps, leurs compétences et leur foi.</p>\n <div class=\"verse\">\n  <!-- TODO fondateur : relire et personnaliser ce message (ajouter une anecdote personnelle et une photo) -->\n  <p>Il y a des appels qu'on ne choisit pas. En 2021, j'ai reçu celui de servir les orphelins et les veuves, comme l'Écriture nous y invite. Je vis aujourd'hui loin du Cameroun, mais je n'ai jamais cessé de croire que c'est chez nous, avec nous, que l'avenir de nos enfants se construit.</p>\n  <p>HCOF commence modestement, parce que nous voulons bien faire ce que nous promettons : nourrir, soutenir la scolarité, soulager. Nous n'annoncerons rien que nous n'ayons réellement fait, et nous rendrons compte de chaque don.</p>\n  <p>Hope's City reste un rêve de long terme. Je préfère que l'on nous juge sur ce que nous aurons accompli demain matin plutôt que sur ce que nous espérons dans vingt ans.</p>\n  <p>Si vous croyez que chaque enfant mérite un avenir, rejoignez-nous.</p>\n  <cite>Landry MBOM, Porteur de Vision</cite>\n </div>\n"
+      },
+      {
+        "className": "",
+        "html": "\n <h2>Gouvernance</h2>\n <p>Une structure légère au démarrage, pensée pour s'étoffer avec l'organisation.</p>\n <ul class=\"facts\">\n  <li><strong>Comité de direction (CODIR) :</strong> trois membres, président, secrétaire général et trésorier, en charge de la gestion au quotidien.</li>\n  <li><strong>Assemblée générale :</strong> six membres, qui suivent et consultent l'action de l'association.</li>\n  <li><strong>Comptes :</strong> arrêtés chaque 31 décembre, avec rapport financier annuel. Un audit externe peut être demandé.</li>\n </ul>\n <p>Les statuts sont conformes à la loi camerounaise n° 90/053 du 19 décembre 1990. <!-- TODO : ajouter le lien vers le PDF des statuts une fois la version finale adoptée --></p>\n"
       }
     ]
   },
