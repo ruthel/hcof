@@ -25,7 +25,20 @@ export const messages = {
     "footer.newsletter": "Newsletter",
     "footer.location": "Douala, Cameroon",
     "footer.rights": "All rights reserved.",
-    "footer.law": "Association governed by Cameroonian law no. 90/053 of 19 December 1990 on freedom of association."
+    "footer.law": "Association governed by Cameroonian law no. 90/053 of 19 December 1990 on freedom of association.",
+    "contact.name": "Name",
+    "contact.email": "Email",
+    "contact.subject": "Subject",
+    "contact.subject.volunteering": "Volunteering",
+    "contact.subject.partnership": "Partnership",
+    "contact.subject.giving": "Giving",
+    "contact.subject.press": "Press",
+    "contact.subject.other": "Other",
+    "contact.message": "Message",
+    "contact.send": "Send message",
+    "contact.sending": "Sending…",
+    "contact.success": "Your message has been sent to HCOF.",
+    "contact.error": "We could not send your message. Please try again."
   },
   fr: {
     "nav.who": "Qui sommes-nous",
@@ -53,6 +66,19 @@ export const messages = {
     "footer.newsletter": "Newsletter",
     "footer.location": "Douala, Cameroun",
     "footer.rights": "Tous droits réservés.",
-    "footer.law": "Association régie par la loi camerounaise n° 90/053 du 19 décembre 1990 relative à la liberté d’association."
+    "footer.law": "Association régie par la loi camerounaise n° 90/053 du 19 décembre 1990 relative à la liberté d’association.",
+    "contact.name": "Nom",
+    "contact.email": "Adresse e-mail",
+    "contact.subject": "Sujet",
+    "contact.subject.volunteering": "Bénévolat",
+    "contact.subject.partnership": "Partenariat",
+    "contact.subject.giving": "Don",
+    "contact.subject.press": "Presse",
+    "contact.subject.other": "Autre",
+    "contact.message": "Message",
+    "contact.send": "Envoyer le message",
+    "contact.sending": "Envoi…",
+    "contact.success": "Votre message a bien été envoyé à HCOF.",
+    "contact.error": "Le message n’a pas pu être envoyé. Réessayez."
   }
 };
