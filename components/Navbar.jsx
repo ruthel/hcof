@@ -93,7 +93,7 @@ export default function Navbar() {
           <summary className="cursor-pointer list-none rounded-full border border-hcof-ink/10 px-3 py-2 font-ui text-xs font-semibold text-hcof-ink">
             {intl.formatMessage({ id: "nav.menu" })}
           </summary>
-          <div className="absolute right-0 top-12 grid min-w-64 gap-1 rounded-2xl border border-hcof-ink/10 bg-white p-3 shadow-[0_20px_50px_rgba(16,63,45,.15)]">
+          <div className="absolute right-0 top-12 grid min-w-64 gap-1 rounded-lg border border-hcof-ink/10 bg-white p-3">
             {navLinks}
           </div>
         </details>
