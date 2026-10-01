@@ -10,12 +10,18 @@ export default function SiteChrome({ children }) {
 
   return (
     <>
-      <a className="skip" href="#main">{intl.formatMessage({ id: "skip" })}</a>
+      <a className="skip" href="#main">
+        {intl.formatMessage({ id: "skip" })}
+      </a>
+
       <Navbar />
-      <div className="status">
+
+      <div className="bg-hcof-ink py-2 text-center font-ui text-[0.72rem] font-medium tracking-[0.02em] text-white/85">
         <Container>{intl.formatMessage({ id: "status" })}</Container>
       </div>
+
       {children}
+
       <Footer />
     </>
   );
