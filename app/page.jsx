@@ -1,9 +1,5 @@
-import { getPage } from "../lib/content";
-
-const page = getPage("index");
-
-export const metadata = page.metadata;
+import LocalizedPage from "../components/LocalizedPage";
 
 export default function HomePage() {
-  return <main id="main" dangerouslySetInnerHTML={{ __html: page.html }} />;
+  return <LocalizedPage pageKey="index" />;
 }
