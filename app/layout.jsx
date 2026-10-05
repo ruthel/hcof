@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Cormorant_Garamond, Manrope, Sora } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import I18nProvider from "../components/I18nProvider";
 import SiteChrome from "../components/SiteChrome";
 
@@ -23,6 +24,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata = {
+  icons: {
+    icon: { url: "/assets/favicon.png", type: "image/png", sizes: "64x62" },
+  },
   title: "HCOF | Hope's City Outreach Foundation",
   description:
     "Christian non-profit association based in Douala, Cameroon, serving orphans, widows and the most vulnerable.",
@@ -40,6 +44,7 @@ export default function RootLayout({ children }) {
         <I18nProvider>
           <SiteChrome>{children}</SiteChrome>
         </I18nProvider>
+        <Analytics />
       </body>
     </html>
   );
