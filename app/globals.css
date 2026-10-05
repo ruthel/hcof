@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+.navigation-progress {
+  position: absolute;
+  inset: auto 0 -3px;
+  height: 3px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.navigation-progress.is-visible { opacity: 1; }
+
+.navigation-progress-bar {
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  background: #C68D1C;
+  box-shadow: 0 0 8px #C68D1C80;
+  transition: transform 200ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation-progress, .navigation-progress-bar { transition: none; }
+}
+
 @theme {
   --color-hcof-ink: #103F2D;
   --color-hcof-leaf: #3F6E38;
@@ -9,11 +33,32 @@
   --color-hcof-paper: #FFFFFF;
   --color-hcof-text: #1B2B24;
   --color-hcof-muted: #4F625A;
+  --color-hcof-deep: #103F2D;
+  --color-hcof-action: #3F6E38;
 
   --font-body: var(--font-manrope);
   --font-display: var(--font-cormorant);
   --font-ui: var(--font-sora);
 }
+
+:root { color-scheme: light; }
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-hcof-ink: #DAEDE0;
+  --color-hcof-leaf: #9DCE91;
+  --color-hcof-gold: #DDAA42;
+  --color-hcof-mist: #16251E;
+  --color-hcof-paper: #0E1914;
+  --color-hcof-text: #E2EAE5;
+  --color-hcof-muted: #AFBFB4;
+  --color-hcof-deep: #103F2D;
+  --color-hcof-action: #345C2E;
+}
+
+:root[data-theme="dark"] .contact-error { color: #FCA5A5; }
+
+select option { background: var(--color-hcof-paper); color: var(--color-hcof-text); }
 
 @layer base {
   * {
@@ -139,7 +184,7 @@
 
   /* Home hero */
   .hero {
-    @apply relative bg-hcof-ink py-20 text-white md:py-28 lg:py-32;
+    @apply relative bg-hcof-deep py-20 text-white md:py-28 lg:py-32;
   }
 
   .hero::after {
@@ -168,11 +213,11 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center border border-hcof-gold bg-hcof-gold px-5 py-3 font-ui text-sm font-semibold text-hcof-ink no-underline transition-colors duration-150 hover:bg-hcof-gold-soft;
+    @apply inline-flex items-center justify-center border border-hcof-gold bg-hcof-gold px-5 py-3 font-ui text-sm font-semibold text-hcof-deep no-underline transition-colors duration-150 hover:bg-hcof-gold-soft;
   }
 
   .btn.green {
-    @apply border-hcof-leaf bg-hcof-leaf text-white hover:bg-hcof-ink;
+    @apply border-hcof-action bg-hcof-action text-white hover:bg-hcof-deep;
   }
 
   .btn.ghost {
@@ -293,11 +338,11 @@
   ol.road li::before {
     content: counter(s);
     @apply absolute left-0 top-7 z-10 grid h-10 w-10 place-items-center bg-hcof-paper font-ui text-xs font-bold text-hcof-ink;
-    border: 1px solid rgba(16,63,45,.28);
+    border: 1px solid color-mix(in srgb, var(--color-hcof-ink) 28%, transparent);
   }
 
   ol.road li.now::before {
-    @apply border-hcof-leaf bg-hcof-leaf text-white;
+    @apply border-hcof-action bg-hcof-action text-white;
   }
 
   ol.road li.vision::before {
@@ -355,7 +400,7 @@
   }
 
   .media-preview-dark {
-    @apply bg-hcof-ink;
+    @apply bg-hcof-deep;
   }
 
   .media-logo {

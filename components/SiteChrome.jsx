@@ -16,7 +16,7 @@ export default function SiteChrome({ children }) {
 
       <Navbar />
 
-      <div className="bg-hcof-ink py-2 text-center font-ui text-[0.72rem] font-medium tracking-[0.02em] text-white/85">
+      <div className="bg-hcof-deep py-2 text-center font-ui text-[0.72rem] font-medium tracking-[0.02em] text-white/85">
         <Container>{intl.formatMessage({ id: "status" })}</Container>
       </div>
 

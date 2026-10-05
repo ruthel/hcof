@@ -32,9 +32,11 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${manrope.variable} ${sora.variable} ${cormorant.variable}`}
     >
       <body>
+        <script dangerouslySetInnerHTML={{ __html: `(() => { let theme; try { theme = localStorage.getItem('hcof-theme'); } catch {} document.documentElement.dataset.theme = theme === 'dark' || theme === 'light' ? theme : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; })();` }} />
         <I18nProvider>
           <SiteChrome>{children}</SiteChrome>
         </I18nProvider>

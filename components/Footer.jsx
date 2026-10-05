@@ -9,7 +9,7 @@ export default function Footer() {
   const t = (id) => intl.formatMessage({ id });
 
   return (
-    <footer className="border-t-4 border-hcof-gold bg-hcof-ink py-14 text-white/80">
+    <footer className="border-t-4 border-hcof-gold bg-hcof-deep py-14 text-white/80">
       <Container>
         <img
           src="/assets/logo-lockup-dark.jpg"
@@ -41,7 +41,7 @@ export default function Footer() {
               <li><Link className="text-white no-underline hover:underline" href="/child-protection">{t("footer.childProtection")}</Link></li>
               <li><Link className="text-white no-underline hover:underline" href="/media-kit">{t("footer.mediaKit")}</Link></li>
               <li><Link className="text-white no-underline hover:underline" href="/give">{t("footer.accountability")}</Link></li>
-              <li><Link className="text-white no-underline hover:underline" href="/about#documents">{t("footer.transparency")}</Link></li>
+              <li><Link className="text-white no-underline hover:underline" href="/documents">{t("footer.transparency")}</Link></li>
               <li><Link className="text-white no-underline hover:underline" href="/legal">{t("footer.legal")}</Link></li>
             </ul>
           </div>

@@ -2,51 +2,31 @@
 
 import { useEffect } from "react";
 import { useIntl } from "react-intl";
-import Container from "./Container";
-import ContactForm from "./ContactForm";
-import { EN_PAGE_CONTENT } from "../i18n/pageContent.en";
-import { FR_PAGE_CONTENT } from "../i18n/pageContent.fr";
-
-const contentByLocale = {
-  en: EN_PAGE_CONTENT,
-  fr: FR_PAGE_CONTENT,
-};
+import { PAGE_COMPONENTS } from "./pages";
 
 export default function LocalizedPage({ pageKey }) {
   const intl = useIntl();
-  const locale = intl.locale === "fr" ? "fr" : "en";
-  const page = contentByLocale[locale]?.[pageKey] ?? EN_PAGE_CONTENT[pageKey];
+  const PageContent = PAGE_COMPONENTS[pageKey];
+  const title = intl.formatMessage({ id: `pages.${pageKey}.title` });
+  const pageDescription = intl.formatMessage({ id: `pages.${pageKey}.description` });
+  const t = (id) => intl.formatMessage({ id });
 
   useEffect(() => {
-    if (!page) return;
+    if (!PageContent) return;
 
-    document.title = page.title;
+    document.title = title;
 
     const description = document.querySelector('meta[name="description"]');
-    if (description && page.description) {
-      description.setAttribute("content", page.description);
+    if (description && pageDescription) {
+      description.setAttribute("content", pageDescription);
     }
-  }, [page]);
+  }, [PageContent, title, pageDescription]);
 
-  if (!page) return null;
+  if (!PageContent) return null;
 
   return (
     <main id="main" className={`page page-${pageKey}`}>
-      {page.sections.map((section, index) => (
-        <section
-          key={`${pageKey}-${locale}-${index}`}
-          className={section.className || undefined}
-          data-section={index}
-        >
-          <Container>
-            <div
-              className="localized-section"
-              dangerouslySetInnerHTML={{ __html: section.html }}
-            />
-            {pageKey === "contact" && index === 1 ? <ContactForm /> : null}
-          </Container>
-        </section>
-      ))}
+      <PageContent t={t} />
     </main>
   );
 }

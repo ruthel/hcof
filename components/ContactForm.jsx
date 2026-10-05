@@ -109,7 +109,7 @@ export default function ContactForm() {
         )}
 
         {status === "error" && (
-          <p className="mb-0 font-ui text-sm font-semibold text-red-700">
+          <p className="contact-error mb-0 font-ui text-sm font-semibold text-red-700">
             {t("contact.error")}
           </p>
         )}
