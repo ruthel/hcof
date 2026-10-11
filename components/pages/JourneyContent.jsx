@@ -36,7 +36,7 @@ export default function JourneyContent({ t }) {
         <p>
           {t("pages.journey.section1.text7")}
         </p>
-        <div className="grid institution-grid">
+        <div className="grid institution-grid lg:grid-cols-3">
           <div className="item">
             <span className="tag t-next">
               {t("pages.journey.section1.text8")}
@@ -58,6 +58,11 @@ export default function JourneyContent({ t }) {
             <p>
               {t("pages.journey.section1.text13")}
             </p>
+          </div>
+          <div className="item">
+            <span className="tag t-next">{t("pages.journey.section1.text8")}</span>
+            <h3>{t("journey.foundation.title")}</h3>
+            <p>{t("journey.foundation.description")}</p>
           </div>
         </div>
         <h2 className="mt-12">
