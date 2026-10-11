@@ -1,4 +1,11 @@
 export const CMS_EN = {
+  "cms.admin.workspace": "Editorial workspace",
+  "cms.admin.viewSite": "View website",
+  "cms.admin.editing": "Content editor",
+  "cms.admin.welcome": "Bring your mission to life.",
+  "cms.admin.welcomeText": "Share your activities, tell your stories and build your photo albums. Your HCOF editorial space, all in one place.",
+  "cms.admin.accessNote": "Reserved for the HCOF team",
+  "cms.admin.loginIntro": "Sign in to manage your website’s content.",
   "cms.activities.empty": "Activities will be published here soon.",
   "cms.news.emptyFeatured": "Featured news will appear here.",
   "cms.news.empty": "No news has been published yet.",
@@ -60,6 +67,13 @@ export const CMS_EN = {
 };
 
 export const CMS_FR = {
+  "cms.admin.workspace": "Espace éditorial",
+  "cms.admin.viewSite": "Voir le site",
+  "cms.admin.editing": "Éditeur de contenu",
+  "cms.admin.welcome": "Donnez vie à votre mission.",
+  "cms.admin.welcomeText": "Partagez vos activités, racontez vos actions et composez vos albums photo. Tout votre espace éditorial HCOF, au même endroit.",
+  "cms.admin.accessNote": "Réservé à l’équipe HCOF",
+  "cms.admin.loginIntro": "Connectez-vous pour gérer les contenus de votre site.",
   "cms.activities.empty": "Les activités seront publiées ici prochainement.",
   "cms.news.emptyFeatured": "Les actualités à la une apparaîtront ici.",
   "cms.news.empty": "Aucune actualité n’a encore été publiée.",

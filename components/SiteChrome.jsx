@@ -4,9 +4,13 @@ import { useIntl } from "react-intl";
 import Container from "./Container";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { usePathname } from "next/navigation";
+import AdminHeader from "./admin/AdminHeader";
 
 export default function SiteChrome({ children }) {
   const intl = useIntl();
+  const pathname = usePathname();
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) return <div className="admin-shell"><a className="skip" href="#main">{intl.formatMessage({ id: "skip" })}</a><AdminHeader />{children}</div>;
 
   return (
     <>
