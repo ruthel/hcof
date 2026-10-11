@@ -329,7 +329,7 @@ export const EN_MESSAGES = {
   "pages.journey.section1.text13": "May be pursued if HCOF's demonstrated activities and legal eligibility support an application for such recognition.",
   "pages.journey.section1.text14": "Long-term objective",
   "pages.journey.section1.text15": "Vision",
-  "pages.journey.section1.text16": "A structure that grows with the vision",
+  "pages.journey.section1.text16": "A structure that grows with the mission",
   "pages.journey.section1.text17": "In the long term, HCOF aims to build a solid structure capable of carrying the Hope's City vision and forging lasting partnerships in service of orphans, widows and vulnerable people. Its legal form will evolve over time, according to what the law allows and what work on the ground requires.",
   "pages.journey.section1.text18": "Our commitment to clarity",
   "pages.journey.section1.text19": "We will not announce a legal status before it has been formally obtained. This site will distinguish between the current legal form, an application in progress, a possible future option and a long-term vision.",

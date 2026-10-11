@@ -329,7 +329,7 @@ export const FR_MESSAGES = {
   "pages.journey.section1.text13": "Pourra être recherchée si les activités démontrées de HCOF et son éligibilité juridique justifient une telle demande.",
   "pages.journey.section1.text14": "Objectif de long terme",
   "pages.journey.section1.text15": "Vision",
-  "pages.journey.section1.text16": "Une structure qui grandit avec la vision",
+  "pages.journey.section1.text16": "Une structure qui grandit avec la mission",
   "pages.journey.section1.text17": "À long terme, HCOF vise à bâtir une structure solide, capable de porter la vision de Hope's City et de nouer des partenariats durables au service des orphelins, des veuves et des personnes vulnérables. Sa forme juridique évoluera au fil des étapes, selon ce que la loi permet et ce que l'action sur le terrain exige.",
   "pages.journey.section1.text18": "Notre engagement de clarté",
   "pages.journey.section1.text19": "Nous n'annoncerons aucun statut juridique avant son obtention formelle. Le site distinguera toujours la forme juridique actuelle, une demande en cours, une option future possible et une vision de long terme.",
