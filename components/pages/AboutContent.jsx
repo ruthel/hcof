@@ -181,12 +181,6 @@ export default function AboutContent({ t }) {
           </li>
           <li>
             <strong>
-              {t("pages.about.section5.text7")}
-            </strong>
-            {t("pages.about.section5.text8")}
-          </li>
-          <li>
-            <strong>
               {t("pages.about.section5.text9")}
             </strong>
             {t("pages.about.section5.text10")}
