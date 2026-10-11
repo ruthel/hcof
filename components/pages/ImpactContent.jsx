@@ -1,18 +1,19 @@
 import Link from "next/link";
 import PageSection from "../PageSection";
 
-export default function ImpactContent({ t }) {
+export default function ImpactContent({ t, embedded = false }) {
   return (
     <>
-      <PageSection index={0} className="pagehead">
+      {!embedded && <PageSection index={0} className="pagehead">
         <h1>
           {t("pages.impact.section0.text1")}
         </h1>
         <p>
           {t("pages.impact.section0.text2")}
         </p>
-      </PageSection>
-      <PageSection index={1}>
+      </PageSection>}
+      <PageSection index={embedded ? "impact" : 1} id="impact" className={embedded ? "alt" : undefined}>
+        {embedded && <h2>{t("nav.impact")}</h2>}
         <span className="tag t-next">
           {t("pages.impact.section1.text1")}
         </span>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageSection from "../PageSection";
+import ImpactContent from "./ImpactContent";
 
 export default function JourneyContent({ t }) {
   return (
@@ -88,6 +89,7 @@ export default function JourneyContent({ t }) {
           </p>
         </div>
       </PageSection>
+      <ImpactContent t={t} embedded />
     </>
   );
 }

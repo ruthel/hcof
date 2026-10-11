@@ -1,4 +1,5 @@
 import IndexContent from "./IndexContent";
+import GalleryContent from "./GalleryContent";
 import UpdatesContent from "./UpdatesContent";
 import AboutContent from "./AboutContent";
 import ChildProtectionContent from "./ChildProtectionContent";
@@ -15,6 +16,7 @@ import ProgramsContent from "./ProgramsContent";
 import DocumentsContent from "./DocumentsContent";
 
 export const PAGE_COMPONENTS = {
+  "gallery": GalleryContent,
   "updates": UpdatesContent,
   "index": IndexContent,
   "about": AboutContent,

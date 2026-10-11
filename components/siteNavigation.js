@@ -3,7 +3,7 @@ export const SITE_LINKS = [
   ["/programs", "nav.what"],
   ["/journey", "nav.updates"],
   ["/hopes-city", "nav.city"],
-  ["/impact", "nav.impact"],
+  ["/gallery", "nav.gallery"],
   ["/get-involved", "nav.involved"],
   ["/contact", "nav.contact"],
 ];

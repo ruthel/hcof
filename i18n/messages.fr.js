@@ -1,4 +1,13 @@
 export const FR_MESSAGES = {
+  "nav.gallery": "Galerie",
+  "pages.gallery.title": "Galerie | HCOF",
+  "pages.gallery.description": "Les images de HCOF : activités, vie de l’association et identité visuelle.",
+  "gallery.photos.heading": "Nos activités en images",
+  "gallery.photos.pending": "Les photos de nos activités seront ajoutées ici au fil des actions, avec les autorisations nécessaires des personnes concernées.",
+  "gallery.identity": "Notre identité visuelle",
+  "gallery.logo": "Logo principal de HCOF",
+  "gallery.greenLogo": "Logo de HCOF sur fond vert",
+  "gallery.symbol": "Symbole de HCOF",
   "newsletter.label": "Votre adresse e-mail",
   "newsletter.placeholder": "vous@exemple.com",
   "newsletter.subscribe": "S’inscrire",
