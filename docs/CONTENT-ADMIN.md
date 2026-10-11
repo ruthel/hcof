@@ -5,7 +5,7 @@ L’espace `/admin` gère les activités, les actualités et les albums, en angl
 ## Installation dans Vercel
 
 1. Dans le projet **HCOF**, ouvrir **Storage**, installer une base **PostgreSQL** depuis le Marketplace et la connecter à l’environnement **Production**.
-2. Vérifier la variable de connexion `DATABASE_URL` (ou `POSTGRES_URL`). Utiliser une URL PostgreSQL TCP `postgresql://...` fournie par le prestataire, avec ses paramètres TLS. Une URL `prisma+postgres://...` n’est pas compatible avec le pilote utilisé ici : choisir l’URL de connexion PostgreSQL standard.
+2. Les variables Prisma/Vercel `POSTGRES_URL`, `DATABASE_URL` et `PRISMA_DATABASE_URL` sont reconnues. Le site choisit la première URL PostgreSQL TCP valide dans cet ordre, avec ses paramètres TLS. Une URL `prisma+postgres://...` est ignorée : le pilote utilise la connexion PostgreSQL standard, pas Prisma Accelerate.
 3. Dans **Settings → Environment Variables**, configurer pour **Production** :
 
 | Variable | Valeur |

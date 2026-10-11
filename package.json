@@ -7,7 +7,7 @@
     "build": "node scripts/prepare-db.mjs && next build",
     "db:setup": "node scripts/prepare-db.mjs",
     "start": "next start",
-    "test:cms": "node --test tests/cms-flow.cjs"
+    "test:cms": "node --test tests/cms-flow.cjs tests/database-config.cjs"
   },
   "dependencies": {
     "@next/env": "16.3.8",

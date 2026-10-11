@@ -1,7 +1,7 @@
 import nextEnv from "@next/env";
 import { Kysely, PostgresDialect } from "kysely";
 nextEnv.loadEnvConfig(process.cwd());
-if (!process.env.DATABASE_URL && !process.env.POSTGRES_URL) {
+if (!process.env.DATABASE_URL && !process.env.POSTGRES_URL && !process.env.PRISMA_DATABASE_URL) {
   console.log("PostgreSQL not connected yet; keeping the existing public content available.");
 } else {
   const { getDatabase } = await import("../lib/database.js");
