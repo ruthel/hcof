@@ -1,4 +1,6 @@
+import { CMS_FR } from "./cms-messages.js";
 export const FR_MESSAGES = {
+  ...CMS_FR,
   "activities.carousel.type": "carrousel",
   "activities.carousel.browse": "Parcourir les activités",
   "activities.carousel.previous": "Activité précédente",
@@ -18,7 +20,7 @@ export const FR_MESSAGES = {
   "policies.privacy-policy.forms.title": "Formulaires et newsletter",
   "policies.privacy-policy.forms.text": "Le formulaire de contact transmet votre nom, votre adresse e-mail, le sujet choisi et votre message à HCOF par e-mail, pour permettre le traitement de votre demande. Le formulaire de newsletter transmet votre adresse e-mail et votre demande d’inscription. Il ne crée pas automatiquement un compte ni une inscription dans une liste de diffusion. Évitez de transmettre des informations sensibles sur vous-même ou sur d’autres personnes dans ces formulaires.",
   "policies.privacy-policy.providers.title": "Hébergement et transmission",
-  "policies.privacy-policy.providers.text": "Le site est hébergé sur Vercel. Les messages sont transmis par le service de messagerie configuré par HCOF et peuvent être conservés dans les boîtes e-mail de l’association. L’hébergeur et le service de messagerie traitent les données techniques nécessaires à leur fonctionnement et à la sécurité de leurs services.",
+  "policies.privacy-policy.providers.text": "Le site est hébergé sur Vercel. Les contenus éditoriaux et les albums sont conservés dans un stockage Vercel Blob privé ; seuls les contenus publiés sont accessibles aux visiteurs. L’administration utilise Clerk pour la connexion des comptes et les cookies de session, avec un accès limité aux adresses e-mail autorisées et vérifiées. Les messages sont transmis par le service de messagerie configuré par HCOF et peuvent être conservés dans les boîtes e-mail de l’association. Ces prestataires traitent les données techniques nécessaires à leur fonctionnement et à la sécurité de leurs services.",
   "policies.privacy-policy.analytics.title": "Statistiques de fréquentation",
   "policies.privacy-policy.analytics.text": "Le site utilise Vercel Web Analytics pour mesurer sa fréquentation et comprendre quelles pages sont consultées. Selon la documentation de Vercel, ce service ne repose pas sur des cookies de suivi et ne suit pas les visiteurs d’un site à l’autre. Vous pouvez consulter la documentation du fournisseur pour connaître les données mesurées et leur traitement.",
   "policies.privacy-policy.storage.title": "Préférences sur votre appareil",
@@ -377,9 +379,9 @@ export const FR_MESSAGES = {
   "pages.impact.section1.text9": "Le rapport financier annuel sera publié ici. Premier rapport : à venir. Les documents de gouvernance et documents institutionnels seront également ajoutés à la section ",
   "pages.impact.section1.text10": "Documents & transparence",
   "pages.impact.section1.text11": " au fur et à mesure de leur adoption formelle.",
-  "pages.journey.title": "Notre évolution institutionnelle | HCOF",
-  "pages.journey.description": "De l'association à la fondation : les quatre étapes de l'évolution de HCOF.",
-  "pages.journey.section0.text1": "Notre évolution institutionnelle",
+  "pages.journey.title": "Actualités et notre parcours | HCOF",
+  "pages.journey.description": "Les actualités, l’évolution institutionnelle et l’impact de HCOF.",
+  "pages.journey.section0.text1": "Actualités et notre parcours",
   "pages.journey.section0.text2": "Une distinction claire entre ce qui existe aujourd'hui, les options institutionnelles qui pourront devenir pertinentes et la vision de fondation à long terme.",
   "pages.journey.section1.text1": "L'évolution de HCOF n'est pas présentée comme une échelle juridique fixe. Après la phase associative, des reconnaissances ou statuts complémentaires pourront être recherchés selon les activités de l'organisation, son éligibilité, ses besoins et les exigences juridiques applicables au moment concerné.",
   "pages.journey.section1.text2": "Phase actuelle",

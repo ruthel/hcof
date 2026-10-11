@@ -1,6 +1,7 @@
 import { AlbumPreview } from "../GalleryAlbums";
 import PageSection from "../PageSection";
 import ImpactContent from "./ImpactContent";
+import DynamicNews from "../DynamicNews";
 
 export default function JourneyContent({ t }) {
   return (
@@ -14,9 +15,7 @@ export default function JourneyContent({ t }) {
         </p>
       </PageSection>
       <PageSection index="headlines" id="headlines" className="alt">
-        <h2>{t("journey.headlines.title")}</h2>
-        <p>{t("journey.headlines.description")}</p>
-        <div className="album-grid album-preview-grid mt-10">{["food", "school", "care"].map((id) => <AlbumPreview key={id} t={t} id={id} />)}</div>
+        <DynamicNews t={t} />
       </PageSection>
       <PageSection index={1}>
         <div className="album-inline"><AlbumPreview t={t} id="mission" /></div>

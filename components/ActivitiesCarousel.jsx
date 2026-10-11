@@ -22,6 +22,7 @@ export default function ActivitiesCarousel({ children, t }) {
       setPosition(Math.min(Math.max(0, items.length - count), Math.round(element.scrollLeft / step)));
     }
     const observer = new ResizeObserver(measure);
+    element.scrollLeft = 0;
     observer.observe(element);
     element.addEventListener("scroll", measure, { passive: true });
     measure();

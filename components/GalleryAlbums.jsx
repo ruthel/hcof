@@ -1,23 +1,19 @@
 import Link from "next/link";
-
-export const GALLERY_ALBUMS = [
-  { id: "food", category: "activities", title: "pages.programs.section2.text2", description: "pages.programs.section2.text3", icon: "food", source: "/programs" },
-  { id: "school", category: "activities", title: "pages.programs.section2.text9", description: "pages.programs.section2.text10", icon: "school", source: "/programs" },
-  { id: "care", category: "activities", title: "pages.programs.section2.text16", description: "pages.programs.section2.text17", icon: "care", source: "/programs" },
-  { id: "safeguarding", category: "activities", title: "gallery.safeguarding", description: "gallery.safeguarding.description", icon: "care", source: "/child-protection" },
-  { id: "mission", category: "news", title: "pages.journey.section1.text16", description: "pages.journey.section1.text17", icon: "mission", source: "/journey" },
-  { id: "accountability", category: "news", title: "gallery.accountability", description: "gallery.accountability.description", icon: "report", source: "/journey#impact" },
-];
+import { useLocale } from "./I18nProvider";
+import { useContent } from "./ContentProvider";
+import { localized } from "../lib/default-content.js";
 
 export function getAlbumImages(album) {
+  if (album.photos?.length) return album.photos.map((photo) => ({ ...photo, src: `/api/media/${photo.id}` }));
   return [
-    { id: `${album.id}-overview`, icon: album.icon, caption: album.title },
+    { id: `${album.id}-overview`, icon: album.icon, caption: "cms.gallery.overview" },
     { id: `${album.id}-support`, icon: "care", caption: "gallery.images.support" },
     { id: `${album.id}-followup`, icon: "report", caption: "gallery.images.followup" },
   ];
 }
 
 export function AlbumCover({ album }) {
+  if (album.src) return <div className="album-cover"><img src={album.src} alt="" width="600" height="360" loading="lazy" className="album-photo" /></div>;
   return (
     <div className={`album-cover album-cover-${album.icon}`}>
       <svg viewBox="0 0 600 360" aria-hidden="true" focusable="false">
@@ -36,13 +32,17 @@ export function AlbumCover({ album }) {
 }
 
 export function AlbumPreview({ t, id }) {
-  const album = GALLERY_ALBUMS.find((item) => item.id === id);
+  const { locale } = useLocale();
+  const content = useContent();
+  const album = [...content.activities, ...content.news].find((item) => item.id === id);
+  if (!album) return null;
+  const cover = album.photos.find((photo) => photo.id === album.coverId) || album.photos[0];
   return (
     <Link className="album-preview" href={`/gallery#${album.id}`}>
-      <AlbumCover album={album} />
+      <AlbumCover album={cover ? { src: `/api/media/${cover.id}` } : album} />
       <span className="album-caption">
-        <span className="album-kicker">{t("gallery.illustration")}</span>
-        <strong>{t(album.title)}</strong>
+        <span className="album-kicker">{t(cover ? "gallery.rubric" : "gallery.illustration")}</span>
+        <strong>{localized(album, "title", locale)}</strong>
         <span className="album-link">{t("gallery.viewAlbum")} <span aria-hidden="true">→</span></span>
       </span>
     </Link>

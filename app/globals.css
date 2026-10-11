@@ -1,5 +1,41 @@
 @import "tailwindcss";
 
+.album-photo { display: block; width: 100%; aspect-ratio: 5 / 3; object-fit: cover; }
+.gallery-dialog .album-photo { max-height: 60vh; object-fit: contain; }
+.cms-paragraph { white-space: pre-line; }
+.admin-dashboard, .admin-access, .admin-signin { padding: 4rem 0; }
+.admin-signin { display: grid; place-items: center; }
+.admin-access form { max-width: 28rem; }
+.admin-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.admin-heading h1 { margin: .5rem 0 1.5rem; }
+.admin-tabs { display: flex; gap: .75rem; margin: 2rem 0 1rem; }
+.admin-tabs button { padding: .7rem 1.25rem; border: 1px solid currentColor; cursor: pointer; }
+.admin-tabs button[aria-pressed="true"] { background: var(--color-hcof-ink); color: var(--color-hcof-paper); }
+.admin-workspace { border: 0; padding: 0; margin: 0; min-width: 0; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 2rem; }
+.admin-list { display: grid; align-content: start; gap: .75rem; }
+.admin-list-item { padding: 1rem; border: 1px solid color-mix(in srgb, var(--color-hcof-ink) 20%, transparent); display: grid; gap: .5rem; text-align: left; cursor: pointer; }
+.admin-list-item span { font-size: .75rem; color: var(--color-hcof-muted); }
+.admin-list-item[aria-current="true"] { border: 2px solid var(--color-hcof-ink); background: var(--color-hcof-mist); }
+.admin-editor { padding: 1.5rem; border: 1px solid color-mix(in srgb, var(--color-hcof-ink) 20%, transparent); min-width: 0; }
+.admin-editor-actions, .admin-photo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-bottom: 1rem; }
+.admin-editor-actions button, .admin-photo-actions button { font-size: .75rem; text-decoration: underline; text-underline-offset: .3em; cursor: pointer; }
+.admin-editor button:disabled { opacity: .4; cursor: default; }
+.admin-options { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; }
+.admin-languages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.admin-languages h2 { font-size: 1.7rem; }
+.admin-checkbox { display: flex; align-items: center; gap: .6rem; }
+.admin-dashboard input[type="checkbox"], .admin-dashboard input[type="radio"] { width: auto; margin: 0; }
+.admin-dashboard label { font-size: .8rem; }
+.admin-dashboard input, .admin-dashboard select, .admin-dashboard textarea { font-size: .9rem; }
+.admin-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.admin-photo { border: 1px solid color-mix(in srgb, var(--color-hcof-ink) 20%, transparent); padding: 1rem; min-width: 0; }
+.admin-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; margin-bottom: 1rem; }
+.admin-save { position: sticky; bottom: 0; z-index: 10; background: var(--color-hcof-paper); display: flex; justify-content: space-between; align-items: center; gap: 1rem; border-top: 1px solid currentColor; padding: 1rem 0; margin-top: 2rem; font-size: .8rem; }
+.admin-feedback [role="alert"] { color: var(--color-hcof-text); border-left: 3px solid var(--color-hcof-gold); padding-left: 1rem; }
+.admin-dashboard button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+@media (max-width: 900px) { .admin-workspace { grid-template-columns: 1fr; } .admin-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .admin-languages, .admin-photo-grid, .admin-list { grid-template-columns: 1fr; } .admin-editor { padding: 1rem; } }
+
 .navigation-progress {
   position: absolute;
   inset: auto 0 -3px;

@@ -1,4 +1,6 @@
+import { CMS_EN } from "./cms-messages.js";
 export const EN_MESSAGES = {
+  ...CMS_EN,
   "activities.carousel.type": "carousel",
   "activities.carousel.browse": "Browse activities",
   "activities.carousel.previous": "Previous activity",
@@ -18,7 +20,7 @@ export const EN_MESSAGES = {
   "policies.privacy-policy.forms.title": "Forms and newsletter",
   "policies.privacy-policy.forms.text": "The contact form sends your name, email address, selected subject and message to HCOF by email so that your request can be handled. The newsletter form sends your email address and subscription request. It does not automatically create an account or add you to a mailing list. Avoid submitting sensitive information about yourself or others through these forms.",
   "policies.privacy-policy.providers.title": "Hosting and delivery",
-  "policies.privacy-policy.providers.text": "The website is hosted on Vercel. Messages are delivered through the email service configured by HCOF and may be retained in the association’s email inboxes. The hosting and email providers process technical data needed to operate and secure their services.",
+  "policies.privacy-policy.providers.text": "The website is hosted on Vercel. Editorial content and photo albums are stored in a private Vercel Blob store; only published content is available to visitors. Administration uses Clerk for account authentication and session cookies, with access restricted to authorized, verified email addresses. Messages are delivered through the email service configured by HCOF and may be retained in the association’s email inboxes. These providers process technical data needed to operate and secure their services.",
   "policies.privacy-policy.analytics.title": "Visitor statistics",
   "policies.privacy-policy.analytics.text": "The website uses Vercel Web Analytics to measure traffic and understand which pages are visited. According to Vercel’s documentation, this service does not rely on tracking cookies or track visitors across websites. Consult the provider’s documentation for details about the data measured and how it is processed.",
   "policies.privacy-policy.storage.title": "Preferences on your device",
@@ -377,9 +379,9 @@ export const EN_MESSAGES = {
   "pages.impact.section1.text9": "The annual financial report will be published here. First report: coming soon. Governance and institutional documents will also be added to the ",
   "pages.impact.section1.text10": "Documents & transparency",
   "pages.impact.section1.text11": " section as they are formally adopted.",
-  "pages.journey.title": "Our institutional journey | HCOF",
-  "pages.journey.description": "From association to foundation: the four stages of HCOF's evolution.",
-  "pages.journey.section0.text1": "Our institutional journey",
+  "pages.journey.title": "News and our journey | HCOF",
+  "pages.journey.description": "News, institutional developments and impact from HCOF.",
+  "pages.journey.section0.text1": "News and our journey",
   "pages.journey.section0.text2": "A clear distinction between what exists today, the institutional options that may become relevant, and the long-term foundation vision.",
   "pages.journey.section1.text1": "HCOF's development is not presented as a fixed legal ladder. After the association phase, additional recognition or status may be pursued according to the organization's activities, eligibility, needs and the legal requirements applicable at that time.",
   "pages.journey.section1.text2": "Current phase",
