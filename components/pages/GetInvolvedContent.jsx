@@ -146,7 +146,7 @@ export default function GetInvolvedContent({ t }) {
         </h2>
         <p>
           {t("pages.get-involved.section3.text2")}
-          <Link href="/media-kit">
+          <Link href="/gallery">
             {t("pages.get-involved.section3.text3")}
           </Link>
           {t("pages.get-involved.section3.text4")}

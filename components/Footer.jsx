@@ -39,10 +39,10 @@ export default function Footer() {
             </h3>
             <ul className="grid list-none gap-2 p-0 font-body text-sm leading-6">
               <li><Link className="text-white no-underline hover:underline" href="/child-protection">{t("footer.childProtection")}</Link></li>
-              <li><Link className="text-white no-underline hover:underline" href="/media-kit">{t("footer.mediaKit")}</Link></li>
               <li><Link className="text-white no-underline hover:underline" href="/give">{t("footer.accountability")}</Link></li>
               <li><Link className="text-white no-underline hover:underline" href="/documents">{t("footer.transparency")}</Link></li>
-              <li><Link className="text-white no-underline hover:underline" href="/legal">{t("footer.legal")}</Link></li>
+              <li><Link className="text-white no-underline hover:underline" href="/privacy-policy">{t("footer.privacy")}</Link></li>
+              <li><Link className="text-white no-underline hover:underline" href="/terms-of-use">{t("footer.terms")}</Link></li>
             </ul>
           </div>
 

@@ -27,7 +27,7 @@ export default function NewsContent({ t }) {
             {t("pages.news.section1.text7")}
           </Link>
           {t("pages.news.section1.text8")}
-          <Link href="/media-kit">
+          <Link href="/gallery">
             {t("pages.news.section1.text9")}
           </Link>
           {t("pages.news.section1.text10")}

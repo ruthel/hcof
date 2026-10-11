@@ -9,8 +9,7 @@ import GiveContent from "./GiveContent";
 import HopesCityContent from "./HopesCityContent";
 import ImpactContent from "./ImpactContent";
 import JourneyContent from "./JourneyContent";
-import LegalContent from "./LegalContent";
-import MediaKitContent from "./MediaKitContent";
+import { PrivacyContent, TermsContent } from "./PolicyContent";
 import NewsContent from "./NewsContent";
 import ProgramsContent from "./ProgramsContent";
 import DocumentsContent from "./DocumentsContent";
@@ -27,8 +26,8 @@ export const PAGE_COMPONENTS = {
   "hopes-city": HopesCityContent,
   "impact": ImpactContent,
   "journey": JourneyContent,
-  "legal": LegalContent,
-  "media-kit": MediaKitContent,
+  "privacy-policy": PrivacyContent,
+  "terms-of-use": TermsContent,
   "news": NewsContent,
   "programs": ProgramsContent,
   "documents": DocumentsContent,

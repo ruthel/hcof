@@ -3,7 +3,7 @@ import Link from "next/link";
 // One catalog keeps the overview and document directory in the same order.
 const categories = [
   { id: "legal-governance", items: [[4, 5], [7, 8], [10, 11]] },
-  { id: "policies", items: [[14, 15, "/child-protection", true], [20, null, "/legal", true], [22, 23], [25], [27], [29, 30]] },
+  { id: "policies", items: [[14, 15, "/child-protection", true], [20, null, "/privacy-policy", true], [22, 23], [25], [27], [29, 30]] },
   { id: "accountability", items: [[17, 18, "/give", true], [33, 34], [36, 37, "/impact"]] },
   { id: "partnerships", items: [] },
 ];

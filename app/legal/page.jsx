@@ -1,5 +1,5 @@
-import LocalizedPage from "../../components/LocalizedPage";
+import { redirect } from "next/navigation";
 
 export default function LegalPage() {
-  return <LocalizedPage pageKey="legal" />;
+  redirect("/privacy-policy");
 }

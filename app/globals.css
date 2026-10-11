@@ -641,23 +641,11 @@ select option { background: var(--color-hcof-paper); color: var(--color-hcof-tex
     @apply mt-12;
   }
 
-  /* Media kit */
-  .page-media-kit section:not(.pagehead) .localized-section {
-    @apply max-w-[1050px];
+  .page-privacy-policy section[data-section="1"] .localized-section,
+  .page-terms-of-use section[data-section="1"] .localized-section {
+    max-width: 800px;
   }
-
-  .page-media-kit .box {
-    @apply my-0;
-  }
-
-  /* Legal */
-  .page-legal section[data-section="1"] .localized-section {
-    @apply max-w-[800px];
-  }
-
-  .page-legal h2:not(:first-child) {
-    @apply mt-12;
-  }
+  .policy-section + .policy-section { margin-top: 3rem; }
 }
 
 @media (max-width: 760px) {
