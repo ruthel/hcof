@@ -1,12 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { UserButton } from "@clerk/nextjs";
 import { useIntl } from "react-intl";
 import { useRouter } from "next/navigation";
 import Container from "../Container";
 import { localized } from "../../lib/default-content.js";
 
-export default function AdminDashboard({ local }) {
+export default function AdminDashboard() {
   const intl = useIntl(); const t = (id) => intl.formatMessage({ id: `cms.admin.${id}` }); const router = useRouter();
   const [content, setContent] = useState(null); const [revision, setRevision] = useState(""); const [baseline, setBaseline] = useState("");
   const [category, setCategory] = useState("activities"); const [selected, setSelected] = useState(""); const [busy, setBusy] = useState(false);
@@ -87,8 +86,8 @@ export default function AdminDashboard({ local }) {
   }
 
   return <main id="main" className="admin-dashboard"><Container>
-    <div className="admin-heading"><div><span className="album-kicker">HCOF</span><h1>{t("title")}</h1></div>{local ? <button type="button" className="btn ghost" onClick={async () => { await fetch("/api/admin/session", { method: "DELETE" }); router.refresh(); }}>{t("logout")}</button> : <UserButton />}</div>
-    <p>{t("intro")}</p>{local && <p className="album-note">{t("local")}</p>}
+    <div className="admin-heading"><div><span className="album-kicker">HCOF</span><h1>{t("title")}</h1></div><button type="button" disabled={busy} className="btn ghost" onClick={async () => { await fetch("/api/admin/session", { method: "DELETE" }); router.refresh(); }}>{t("logout")}</button></div>
+    <p>{t("intro")}</p>
     <div className="admin-tabs" role="group" aria-label={t("sections")}>
       {["activities", "news"].map((value) => <button disabled={busy} type="button" key={value} aria-pressed={category === value} onClick={() => { setCategory(value); setSelected(content?.[value][0]?.id || ""); }}>{t(value)}</button>)}
     </div>

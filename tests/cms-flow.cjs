@@ -1,18 +1,33 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { spawn, spawnSync } = require('node:child_process');
-const { mkdtemp, readFile, rm } = require('node:fs/promises');
-const { tmpdir } = require('node:os');
+const { readFile } = require('node:fs/promises');
+const { promisify } = require('node:util');
+const { execFile } = require('node:child_process');
 const path = require('node:path');
 const { randomBytes } = require('node:crypto');
 
 test('CMS: authentication, drafts, albums, publication and concurrent edits', { timeout: 180000 }, async () => {
-  const folder = await mkdtemp(path.join(tmpdir(), 'hcof-cms-test-'));
+  const { PGlite } = await import('@electric-sql/pglite');
+  const { PGLiteSocketServer } = await import('@electric-sql/pglite-socket');
+  const database = await PGlite.create();
+  const dbPort = 5100 + Math.floor(Math.random() * 1000);
+  const socket = new PGLiteSocketServer({ db: database, host: '127.0.0.1', port: dbPort, maxConnections: 10 });
+  await socket.start();
   const port = 3100 + Math.floor(Math.random() * 1000);
   const base = `http://localhost:${port}`;
   const password = randomBytes(20).toString('hex');
-  const env = { ...process.env, CMS_LOCAL_STORAGE: 'true', CMS_LOCAL_DATA_DIR: folder, ADMIN_PASSWORD: password, ADMIN_SESSION_SECRET: randomBytes(32).toString('hex'), NODE_ENV: 'development' };
+  const env = { ...process.env, DATABASE_URL: `postgresql://postgres:postgres@127.0.0.1:${dbPort}/postgres?sslmode=disable`, BETTER_AUTH_URL: base, ADMIN_EMAILS: 'admin@hcof.com', ADMIN_INITIAL_PASSWORD: password, BETTER_AUTH_SECRET: randomBytes(32).toString('hex'), NODE_ENV: 'development' };
   for (const key of ['VERCEL', 'BLOB_READ_WRITE_TOKEN', 'CLERK_SECRET_KEY', 'NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY']) delete env[key];
+  try {
+    await promisify(execFile)(process.execPath, ['scripts/prepare-db.mjs'], { env, windowsHide: true });
+    // The bootstrap is repeatable and never resets an existing account's password.
+    await promisify(execFile)(process.execPath, ['scripts/prepare-db.mjs'], { env: { ...env, ADMIN_INITIAL_PASSWORD: 'different-bootstrap-password' }, windowsHide: true });
+    await promisify(execFile)(process.execPath, ['scripts/prepare-db.mjs'], { env: { ...env, ADMIN_EMAILS: 'reader@hcof.com' }, windowsHide: true });
+    const credentials = await database.query('SELECT password FROM account');
+    assert.equal(credentials.rows.length, 2);
+    assert.ok(credentials.rows.every(row => row.password && row.password !== password));
+  } catch (error) { await socket.stop(); await database.close(); throw error; }
   const server = spawn(process.execPath, [require.resolve('next/dist/bin/next'), 'dev', '--port', String(port)], { env, stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });
   let logs = ''; server.stdout.on('data', value => { logs += value; }); server.stderr.on('data', value => { logs += value; });
   let cookie = '';
@@ -28,8 +43,9 @@ test('CMS: authentication, drafts, albums, publication and concurrent edits', { 
     assert.ok(ready, logs);
     assert.equal((await request('/api/admin/content')).status, 401);
     assert.equal((await save({})).status, 401);
-    assert.equal((await request('/api/admin/session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: 'wrong' }) })).status, 401);
-    const login = await request('/api/admin/session', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password }) });
+    assert.equal((await request('/api/auth/sign-up/email', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: 'other@hcof.com', password, name: 'Other' }) })).status, 400);
+    assert.equal((await request('/api/auth/sign-in/email', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: 'admin@hcof.com', password: 'wrong' }) })).status, 401);
+    const login = await request('/api/auth/sign-in/email', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: 'admin@hcof.com', password }) });
     assert.equal(login.status, 200); assert.match(login.headers.get('set-cookie'), /HttpOnly/i);
     cookie = login.headers.get('set-cookie').split(';')[0];
     let state = await (await request('/api/admin/content')).json();
@@ -62,11 +78,18 @@ test('CMS: authentication, drafts, albums, publication and concurrent edits', { 
     state.content.news.at(-1).status = 'draft';
     assert.equal((await save(state)).status, 200);
     assert.equal((await request(`/api/media/${photo}`, { headers: { Cookie: '' } })).status, 404);
-    assert.equal((await request('/api/admin/content', { headers: { Cookie: 'hcof_local_admin=forged' } })).status, 401);
+    assert.equal((await request('/api/admin/content', { headers: { Cookie: 'better-auth.session_token=forged' } })).status, 401);
     assert.equal((await request('/api/admin/content', { method: 'PUT', headers: { Origin: 'https://other.example' }, body: '{}' })).status, 403);
+    assert.equal((await request('/api/admin/session', { method: 'DELETE' })).status, 200);
+    assert.equal((await request('/api/admin/content')).status, 401);
+    const reader = await request('/api/auth/sign-in/email', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: 'reader@hcof.com', password }) });
+    assert.equal(reader.status, 200);
+    cookie = reader.headers.get('set-cookie').split(';')[0];
+    assert.equal((await request('/api/admin/content')).status, 401);
+    assert.equal((await request('/api/admin/upload', { method: 'POST' })).status, 401);
   } finally {
     if (process.platform === 'win32') spawnSync('taskkill', ['/PID', String(server.pid), '/T', '/F'], { windowsHide: true, stdio: 'ignore' }); else server.kill('SIGTERM');
     await new Promise(resolve => setTimeout(resolve, 300));
-    await rm(folder, { recursive: true, force: true });
+    await socket.stop(); await database.close();
   }
 });
