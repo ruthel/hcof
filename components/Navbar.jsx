@@ -11,7 +11,7 @@ import { useLocale } from "./I18nProvider";
 const links = [
   ["/about", "nav.who"],
   ["/programs", "nav.what"],
-  ["/updates", "nav.updates"],
+  ["/journey", "nav.updates"],
   ["/hopes-city", "nav.city"],
   ["/impact", "nav.impact"],
   ["/get-involved", "nav.involved"],

@@ -1,5 +1,5 @@
-import LocalizedPage from "../../components/LocalizedPage";
+import { redirect } from "next/navigation";
 
 export default function UpdatesPage() {
-  return <LocalizedPage pageKey="updates" />;
+  redirect("/journey");
 }
