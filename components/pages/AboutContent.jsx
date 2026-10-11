@@ -122,6 +122,15 @@ export default function AboutContent({ t }) {
         <h2>
           {t("pages.about.section4.text1")}
         </h2>
+        <div className="founder-layout">
+          <figure className="founder-portrait">
+            <img src="/assets/team/founder.svg" alt={t("founder.portraitAlt")} width="480" height="480" loading="lazy" />
+            <figcaption>
+              <strong>Landry MBOM</strong>
+              <span>{t("founder.photoPlaceholder")}</span>
+            </figcaption>
+          </figure>
+          <div className="founder-message">
         <p>
           {t("pages.about.section4.text2")}
         </p>
@@ -141,6 +150,8 @@ export default function AboutContent({ t }) {
           <cite>
             {t("pages.about.section4.text7")}
           </cite>
+        </div>
+          </div>
         </div>
       </PageSection>
       <PageSection index={5} id="governance">

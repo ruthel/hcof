@@ -61,8 +61,25 @@
 select option { background: var(--color-hcof-paper); color: var(--color-hcof-text); }
 
 .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.page-about section[data-section="4"] .localized-section { max-width: none; }
+.founder-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+.founder-portrait { margin: 0; }
+.founder-portrait img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.founder-portrait figcaption { padding-top: 1rem; }
+.founder-portrait figcaption strong { display: block; }
+.founder-portrait figcaption span { color: var(--color-hcof-muted); font-size: .8rem; }
+.founder-message { min-width: 0; }
+.founder-message .verse { margin-bottom: 0; }
 @media (max-width: 760px) {
   .team-grid { grid-template-columns: 1fr; }
+  .founder-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .founder-portrait { max-width: 320px; }
 }
 
 @layer base {

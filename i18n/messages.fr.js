@@ -1,4 +1,6 @@
 export const FR_MESSAGES = {
+  "founder.portraitAlt": "Emplacement du portrait de Landry MBOM",
+  "founder.photoPlaceholder": "Portrait provisoire · photo à ajouter",
   "team.heading": "Notre équipe",
   "team.intro": "Le comité de direction rassemble le président, le secrétaire général et le trésorier.",
   "team.demo": "Présentation provisoire : les noms et biographies ci-dessous sont fictifs. Les portraits sont des illustrations à remplacer par les photos de l'équipe.",

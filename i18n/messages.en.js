@@ -1,4 +1,6 @@
 export const EN_MESSAGES = {
+  "founder.portraitAlt": "Portrait placeholder for Landry MBOM",
+  "founder.photoPlaceholder": "Temporary portrait · photo to add",
   "team.heading": "Our team",
   "team.intro": "The Management Committee brings together the president, secretary general and treasurer.",
   "team.demo": "Temporary presentation: the names and biographies below are fictional. The portraits are illustrations to be replaced with team photos.",
