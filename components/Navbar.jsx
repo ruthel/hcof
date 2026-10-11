@@ -7,23 +7,14 @@ import Container from "./Container";
 import NavigationProgress from "./NavigationProgress";
 import ThemeToggle from "./ThemeToggle";
 import { useLocale } from "./I18nProvider";
-
-const links = [
-  ["/about", "nav.who"],
-  ["/programs", "nav.what"],
-  ["/journey", "nav.updates"],
-  ["/hopes-city", "nav.city"],
-  ["/impact", "nav.impact"],
-  ["/get-involved", "nav.involved"],
-  ["/contact", "nav.contact"],
-];
+import { SITE_LINKS } from "./siteNavigation";
 
 export default function Navbar() {
   const pathname = usePathname();
   const intl = useIntl();
   const { locale, setLocale } = useLocale();
 
-  const navLinks = links.map(([href, id]) => {
+  const navLinks = SITE_LINKS.map(([href, id]) => {
     const active = pathname === href;
 
     return (

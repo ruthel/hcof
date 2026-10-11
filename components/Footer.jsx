@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useIntl } from "react-intl";
 import Container from "./Container";
+import { SITE_LINKS } from "./siteNavigation";
 
 export default function Footer() {
   const intl = useIntl();
@@ -25,11 +26,9 @@ export default function Footer() {
               {t("footer.site")}
             </h3>
             <ul className="grid list-none gap-2 p-0 font-body text-sm leading-6">
-              <li><Link className="text-white no-underline hover:underline" href="/about">{t("nav.who")}</Link></li>
-              <li><Link className="text-white no-underline hover:underline" href="/programs">{t("nav.what")}</Link></li>
-              <li><Link className="text-white no-underline hover:underline" href="/journey">{t("nav.journey")}</Link></li>
-              <li><Link className="text-white no-underline hover:underline" href="/hopes-city">{t("nav.city")}</Link></li>
-              <li><Link className="text-white no-underline hover:underline" href="/impact">{t("nav.impact")}</Link></li>
+              {SITE_LINKS.filter(([href]) => href !== "/contact").map(([href, id]) => (
+                <li key={href}><Link className="text-white no-underline hover:underline" href={href}>{t(id)}</Link></li>
+              ))}
             </ul>
           </div>
 
@@ -52,7 +51,7 @@ export default function Footer() {
             </h3>
             <ul className="grid list-none gap-2 p-0 font-body text-sm leading-6">
               <li>{t("footer.location")}</li>
-              <li><Link className="text-white no-underline hover:underline" href="/contact">{t("footer.write")}</Link></li>
+              <li><Link className="text-white no-underline hover:underline" href="/contact">{t("nav.contact")}</Link></li>
               <li><Link className="text-white no-underline hover:underline" href="/news">{t("footer.newsletter")}</Link></li>
             </ul>
           </div>
