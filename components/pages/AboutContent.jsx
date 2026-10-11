@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageSection from "../PageSection";
 import TeamSection from "../TeamSection";
+import DocumentCategories from "../DocumentCategories";
 
 export default function AboutContent({ t }) {
   return (
@@ -213,40 +214,7 @@ export default function AboutContent({ t }) {
         <p>
           {t("pages.about.section6.text2")}
         </p>
-        <div className="grid document-list">
-          <div className="item">
-            <h3>
-              {t("pages.about.section6.text3")}
-            </h3>
-            <p>
-              {t("pages.about.section6.text4")}
-            </p>
-          </div>
-          <div className="item">
-            <h3>
-              {t("pages.about.section6.text5")}
-            </h3>
-            <p>
-              {t("pages.about.section6.text6")}
-            </p>
-          </div>
-          <div className="item">
-            <h3>
-              {t("pages.about.section6.text7")}
-            </h3>
-            <p>
-              {t("pages.about.section6.text8")}
-            </p>
-          </div>
-          <div className="item">
-            <h3>
-              {t("pages.about.section6.text9")}
-            </h3>
-            <p>
-              {t("pages.about.section6.text10")}
-            </p>
-          </div>
-        </div>
+        <DocumentCategories t={t} preview />
         <p className="mt-10">
           <strong>
             {t("pages.about.section6.text11")}
