@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageSection from "../PageSection";
+import { AlbumPreview } from "../GalleryAlbums";
 
 export default function ImpactContent({ t, embedded = false }) {
   return (
@@ -14,6 +15,7 @@ export default function ImpactContent({ t, embedded = false }) {
       </PageSection>}
       <PageSection index={embedded ? "impact" : 1} id="impact" className={embedded ? "alt" : undefined}>
         {embedded && <h2>{t("nav.impact")}</h2>}
+        <div className="album-inline"><AlbumPreview t={t} id="accountability" /></div>
         <span className="tag t-next">
           {t("pages.impact.section1.text1")}
         </span>

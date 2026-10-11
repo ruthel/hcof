@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { AlbumPreview } from "../GalleryAlbums";
 import PageSection from "../PageSection";
 import ImpactContent from "./ImpactContent";
 
@@ -16,8 +16,10 @@ export default function JourneyContent({ t }) {
       <PageSection index="headlines" id="headlines" className="alt">
         <h2>{t("journey.headlines.title")}</h2>
         <p>{t("journey.headlines.description")}</p>
+        <div className="album-grid album-preview-grid mt-10">{["food", "school", "care"].map((id) => <AlbumPreview key={id} t={t} id={id} />)}</div>
       </PageSection>
       <PageSection index={1}>
+        <div className="album-inline"><AlbumPreview t={t} id="mission" /></div>
         <p>
           {t("pages.journey.section1.text1")}
         </p>

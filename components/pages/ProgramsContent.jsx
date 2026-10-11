@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageSection from "../PageSection";
+import { AlbumPreview } from "../GalleryAlbums";
 
 export default function ProgramsContent({ t }) {
   return (
@@ -33,6 +34,7 @@ export default function ProgramsContent({ t }) {
       <PageSection index={2} className="alt">
         <div className="grid grid-wide">
           <article className="item">
+            <AlbumPreview t={t} id="food" />
             <span className="tag t-now">
               {t("pages.programs.section2.text1")}
             </span>
@@ -56,6 +58,7 @@ export default function ProgramsContent({ t }) {
             </p>
           </article>
           <article className="item">
+            <AlbumPreview t={t} id="school" />
             <span className="tag t-now">
               {t("pages.programs.section2.text8")}
             </span>
@@ -79,6 +82,7 @@ export default function ProgramsContent({ t }) {
             </p>
           </article>
           <article className="item">
+            <AlbumPreview t={t} id="care" />
             <span className="tag t-now">
               {t("pages.programs.section2.text15")}
             </span>
@@ -104,6 +108,7 @@ export default function ProgramsContent({ t }) {
         </div>
       </PageSection>
       <PageSection index={3}>
+        <div className="album-inline"><AlbumPreview t={t} id="safeguarding" /></div>
         <h2>
           {t("pages.programs.section3.text1")}
         </h2>
@@ -119,6 +124,7 @@ export default function ProgramsContent({ t }) {
         </p>
       </PageSection>
       <PageSection index={4} className="alt">
+        <div className="album-inline"><AlbumPreview t={t} id="accountability" /></div>
         <h2>
           {t("pages.programs.section4.text1")}
         </h2>
@@ -135,6 +141,7 @@ export default function ProgramsContent({ t }) {
         </p>
       </PageSection>
       <PageSection index={5}>
+        <div className="album-inline"><AlbumPreview t={t} id="mission" /></div>
         <h2>
           {t("pages.programs.section5.text1")}
         </h2>

@@ -439,6 +439,38 @@ select option { background: var(--color-hcof-paper); color: var(--color-hcof-tex
   }
 
   /* Media kit */
+  .album-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .album-preview-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .album-preview { display: block; color: var(--color-hcof-ink); text-decoration: none; }
+  .album-cover { overflow: hidden; background: var(--color-hcof-mist); color: var(--color-hcof-ink); }
+  .album-cover svg { display: block; width: 100%; height: auto; transition: transform .25s ease; }
+  .album-preview:hover .album-cover svg { transform: scale(1.03); }
+  .album-caption { display: grid; gap: .6rem; padding: 1rem 0 1.5rem; }
+  .album-caption strong { font-size: 1.15rem; }
+  .album-kicker { font-size: .7rem; letter-spacing: .09em; text-transform: uppercase; color: var(--color-hcof-muted); }
+  .album-link { display: inline-flex; gap: .65rem; align-items: center; text-decoration: underline; text-underline-offset: .3em; font-size: .85rem; font-weight: 600; }
+  .album-preview:hover .album-link { text-decoration-thickness: 2px; }
+  .album-inline { max-width: 28rem; margin: 0 0 2rem; }
+  .gallery-album { scroll-margin-top: 8rem; border: 1px solid color-mix(in srgb, var(--color-hcof-ink) 18%, transparent); }
+  .album-body { padding: 1.5rem; }
+  .album-body h3 { margin: .75rem 0; }
+  .album-note { font-size: .85rem; color: var(--color-hcof-muted); }
+  .album-enlarge { display: block; width: 100%; text-align: left; cursor: zoom-in; }
+  .album-enlarge > span { display: block; padding: .6rem 1rem; font-size: .75rem; color: var(--color-hcof-muted); }
+  .album-filters { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+  .album-filters button { border: 1px solid currentColor; padding: .6rem 1.2rem; cursor: pointer; font-size: .85rem; }
+  .album-filters button[aria-pressed="true"] { background: var(--color-hcof-ink); color: var(--color-hcof-paper); }
+  .gallery-dialog { width: min(90vw, 850px); max-height: 90vh; padding: 0; border: none; background: var(--color-hcof-paper); color: var(--color-hcof-ink); }
+  .gallery-dialog::backdrop { background: rgb(0 0 0 / .75); }
+  .gallery-close { display: block; margin-left: auto; padding: 1rem; cursor: pointer; }
+  .album-preview:focus-visible, .album-enlarge:focus-visible, .album-filters button:focus-visible, .gallery-close:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  @media (max-width: 767px) { .album-grid, .album-preview-grid { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { .album-cover svg { transition: none; } }
   .media-card {
     @apply m-0;
   }
