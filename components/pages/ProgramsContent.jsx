@@ -106,10 +106,17 @@ export default function ProgramsContent({ t }) {
               {t("pages.programs.section2.text21")}
             </p>
           </article>
+          <article className="item">
+            <AlbumPreview t={t} id="safeguarding" />
+            <h3>{t("gallery.safeguarding")}</h3>
+            <p>{t("gallery.safeguarding.description")}</p>
+            <Link className="album-link" href="/child-protection">
+              {t("pages.programs.section3.text4")} <span aria-hidden="true">→</span>
+            </Link>
+          </article>
         </ActivitiesCarousel>
       </PageSection>
       <PageSection index={3}>
-        <div className="album-inline"><AlbumPreview t={t} id="safeguarding" /></div>
         <h2>
           {t("pages.programs.section3.text1")}
         </h2>
