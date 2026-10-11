@@ -111,7 +111,7 @@ export const EN_MESSAGES = {
   "nav.contact": "Contact",
   "nav.menu": "Menu",
   "nav.language": "Language",
-  "status": "Non-profit association being registered in Douala, Cameroon. Founded 2027.",
+  "status": "Website under construction · Non-profit association being registered in Douala, Cameroon. Founded 2027.",
   "skip": "Skip to content",
   "footer.site": "Site",
   "footer.trust": "Trust",

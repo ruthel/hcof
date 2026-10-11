@@ -111,7 +111,7 @@ export const FR_MESSAGES = {
   "nav.contact": "Contact",
   "nav.menu": "Menu",
   "nav.language": "Langue",
-  "status": "Association à but non lucratif en cours d’enregistrement à Douala, Cameroun. Fondée en 2027.",
+  "status": "Site en construction · Association à but non lucratif en cours d’enregistrement à Douala, Cameroun. Fondée en 2027.",
   "skip": "Aller au contenu",
   "footer.site": "Site",
   "footer.trust": "Confiance",
