@@ -9,6 +9,14 @@ export const GALLERY_ALBUMS = [
   { id: "accountability", category: "news", title: "gallery.accountability", description: "gallery.accountability.description", icon: "report", source: "/journey#impact" },
 ];
 
+export function getAlbumImages(album) {
+  return [
+    { id: `${album.id}-overview`, icon: album.icon, caption: album.title },
+    { id: `${album.id}-support`, icon: "care", caption: "gallery.images.support" },
+    { id: `${album.id}-followup`, icon: "report", caption: "gallery.images.followup" },
+  ];
+}
+
 export function AlbumCover({ album }) {
   return (
     <div className={`album-cover album-cover-${album.icon}`}>

@@ -457,6 +457,11 @@ select option { background: var(--color-hcof-paper); color: var(--color-hcof-tex
   .album-preview:hover .album-link { text-decoration-thickness: 2px; }
   .album-inline { max-width: 28rem; margin: 0 0 2rem; }
   .gallery-album { scroll-margin-top: 8rem; border: 1px solid color-mix(in srgb, var(--color-hcof-ink) 18%, transparent); }
+  .gallery-rubrics { display: grid; gap: 2rem; margin-top: 2rem; }
+  .gallery-photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+  .gallery-photo-grid figure { margin: 0; min-width: 0; }
+  .gallery-photo-grid figcaption { display: grid; gap: .5rem; padding: .75rem 0; font-size: .85rem; }
+  @media (max-width: 767px) { .gallery-photo-grid { grid-template-columns: 1fr; } }
   .album-body { padding: 1.5rem; }
   .album-body h3 { margin: .75rem 0; }
   .album-note { font-size: .85rem; color: var(--color-hcof-muted); }
