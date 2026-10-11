@@ -142,7 +142,6 @@ export default function ProgramsContent({ t }) {
         </p>
       </PageSection>
       <PageSection index={5}>
-        <div className="album-inline"><AlbumPreview t={t} id="mission" /></div>
         <h2>
           {t("pages.programs.section5.text1")}
         </h2>
