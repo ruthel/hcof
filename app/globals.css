@@ -445,6 +445,18 @@ select option { background: var(--color-hcof-paper); color: var(--color-hcof-tex
     gap: 2rem;
     margin-top: 2rem;
   }
+  .activities-track { display: flex; gap: 2rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .activities-track::-webkit-scrollbar { display: none; }
+  .activities-track > article { flex: 0 0 calc((100% - 4rem) / 3); min-width: 0; scroll-snap-align: start; }
+  .activities-controls { display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-top: 2rem; }
+  .activities-controls > button { width: 44px; height: 44px; border: 1px solid currentColor; border-radius: 50%; cursor: pointer; }
+  .activities-controls > button:disabled { opacity: .3; cursor: default; }
+  .activities-dots { display: flex; gap: .25rem; }
+  .activities-dots button { display: grid; place-items: center; width: 32px; height: 44px; cursor: pointer; }
+  .activities-dots button::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: .3; }
+  .activities-dots button[aria-current="true"]::after { opacity: 1; }
+  .activities-track:focus-visible, .activities-controls button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  @media (max-width: 767px) { .activities-track > article { flex-basis: 100%; } }
   .album-preview-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .album-preview { display: block; color: var(--color-hcof-ink); text-decoration: none; }
   .album-cover { overflow: hidden; background: var(--color-hcof-mist); color: var(--color-hcof-ink); }

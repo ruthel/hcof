@@ -1,4 +1,10 @@
 export const EN_MESSAGES = {
+  "activities.carousel.type": "carousel",
+  "activities.carousel.browse": "Browse activities",
+  "activities.carousel.previous": "Previous activity",
+  "activities.carousel.next": "Next activity",
+  "activities.carousel.positions": "Carousel positions",
+  "activities.carousel.position": "Go to position",
   "footer.privacy": "Privacy Policy",
   "footer.terms": "Terms of Use",
   "pages.privacy-policy.title": "Privacy Policy | HCOF",

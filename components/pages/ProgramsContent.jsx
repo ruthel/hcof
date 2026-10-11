@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageSection from "../PageSection";
 import { AlbumPreview } from "../GalleryAlbums";
+import ActivitiesCarousel from "../ActivitiesCarousel";
 
 export default function ProgramsContent({ t }) {
   return (
@@ -32,7 +33,7 @@ export default function ProgramsContent({ t }) {
         </p>
       </PageSection>
       <PageSection index={2} className="alt">
-        <div className="grid grid-wide">
+        <ActivitiesCarousel t={t}>
           <article className="item">
             <AlbumPreview t={t} id="food" />
             <span className="tag t-now">
@@ -105,7 +106,7 @@ export default function ProgramsContent({ t }) {
               {t("pages.programs.section2.text21")}
             </p>
           </article>
-        </div>
+        </ActivitiesCarousel>
       </PageSection>
       <PageSection index={3}>
         <div className="album-inline"><AlbumPreview t={t} id="safeguarding" /></div>
