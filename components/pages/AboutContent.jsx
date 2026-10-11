@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageSection from "../PageSection";
+import TeamSection from "../TeamSection";
 
 export default function AboutContent({ t }) {
   return (
@@ -194,7 +195,8 @@ export default function AboutContent({ t }) {
           {t("pages.about.section5.text16")}
         </p>
       </PageSection>
-      <PageSection index={6} className="alt">
+      <TeamSection t={t} />
+      <PageSection index={6}>
         <h2 id="documents">
           {t("pages.about.section6.text1")}
         </h2>
