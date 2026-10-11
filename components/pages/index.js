@@ -1,4 +1,5 @@
 import IndexContent from "./IndexContent";
+import UpdatesContent from "./UpdatesContent";
 import AboutContent from "./AboutContent";
 import ChildProtectionContent from "./ChildProtectionContent";
 import ContactContent from "./ContactContent";
@@ -14,6 +15,7 @@ import ProgramsContent from "./ProgramsContent";
 import DocumentsContent from "./DocumentsContent";
 
 export const PAGE_COMPONENTS = {
+  "updates": UpdatesContent,
   "index": IndexContent,
   "about": AboutContent,
   "child-protection": ChildProtectionContent,

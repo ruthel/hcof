@@ -13,6 +13,8 @@ export default function AboutContent({ t }) {
         </p>
       </PageSection>
       <PageSection index={1}>
+        <h2 id="who-we-are">{t("pages.about.identity.heading")}</h2>
+        <p>{t("pages.about.identity.description")}</p>
         <h2>
           {t("pages.about.section1.text1")}
         </h2>
