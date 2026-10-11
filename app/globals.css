@@ -76,6 +76,26 @@ select option { background: var(--color-hcof-paper); color: var(--color-hcof-tex
 .founder-portrait figcaption span { color: var(--color-hcof-muted); font-size: .8rem; }
 .founder-message { min-width: 0; }
 .founder-message .verse { margin-bottom: 0; }
+.founder-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  color: var(--color-hcof-leaf);
+  font-weight: 600;
+  text-decoration: none;
+}
+.founder-contact-link > span:first-child {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  transition: background-size 180ms ease;
+}
+.founder-contact-link:hover > span:first-child,
+.founder-contact-link:focus-visible > span:first-child { background-size: 100% 2px; }
+.founder-contact-arrow { transition: transform 180ms ease; }
+.founder-contact-link:hover .founder-contact-arrow,
+.founder-contact-link:focus-visible .founder-contact-arrow { transform: translateX(3px); }
 @media (max-width: 760px) {
   .team-grid { grid-template-columns: 1fr; }
   .founder-layout { grid-template-columns: 1fr; gap: 2rem; }

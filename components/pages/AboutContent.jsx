@@ -145,7 +145,12 @@ export default function AboutContent({ t }) {
             {t("pages.about.section4.text5")}
           </p>
           <p>
-            {t("pages.about.section4.text6")}
+            {t("pages.about.section4.text6")} {" "}
+            <Link href="/contact" className="founder-contact-link">
+              <span>{t("founder.joinUs")}</span>
+              <span className="founder-contact-arrow" aria-hidden="true">→</span>
+            </Link>
+            {"."}
           </p>
           <cite>
             {t("pages.about.section4.text7")}
