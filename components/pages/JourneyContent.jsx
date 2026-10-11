@@ -13,6 +13,10 @@ export default function JourneyContent({ t }) {
           {t("pages.journey.section0.text2")}
         </p>
       </PageSection>
+      <PageSection index="headlines" id="headlines" className="alt">
+        <h2>{t("journey.headlines.title")}</h2>
+        <p>{t("journey.headlines.description")}</p>
+      </PageSection>
       <PageSection index={1}>
         <p>
           {t("pages.journey.section1.text1")}

@@ -14,6 +14,8 @@ export const EN_MESSAGES = {
   "newsletter.note": "Your subscription request will be sent to HCOF. You can request to unsubscribe at any time.",
   "newsletter.request": "I would like to subscribe to the HCOF newsletter and receive news from the association by email.",
   "newsletter.success": "Your subscription request has been sent to HCOF.",
+  "journey.headlines.title": "In the spotlight",
+  "journey.headlines.description": "Find the latest HCOF news and highlights from our activities here. Our first updates will be published soon.",
   "journey.foundation.title": "Foundation",
   "journey.foundation.description": "If its mission calls for it, HCOF may consider organizing itself around a dedicated endowment to ensure the continuity of its work and the trust of its partners over the very long term.",
   "founder.portraitAlt": "Portrait placeholder for Landry MBOM",
