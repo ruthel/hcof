@@ -1,6 +1,6 @@
 export const EN_MESSAGES = {
   "journey.foundation.title": "Foundation",
-  "journey.foundation.description": "A foundation structure may be considered to carry the Hope's City vision if the applicable legal framework, resources and needs of work on the ground allow this development.",
+  "journey.foundation.description": "If its mission calls for it, HCOF may consider organizing itself around a dedicated endowment to ensure the continuity of its work and the trust of its partners over the very long term.",
   "founder.portraitAlt": "Portrait placeholder for Landry MBOM",
   "founder.photoPlaceholder": "Temporary portrait · photo to add",
   "team.heading": "Our team",

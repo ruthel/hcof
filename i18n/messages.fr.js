@@ -1,6 +1,6 @@
 export const FR_MESSAGES = {
   "journey.foundation.title": "Fondation",
-  "journey.foundation.description": "Une structure de fondation pourra être envisagée pour porter la vision de Hope's City, si le cadre juridique applicable, les ressources et les besoins de l'action sur le terrain permettent cette évolution.",
+  "journey.foundation.description": "Si la mission le demande, HCOF pourra envisager de se structurer autour d'un patrimoine dédié, pour garantir sur le très long terme la continuité de son action et la confiance de ses partenaires.",
   "founder.portraitAlt": "Emplacement du portrait de Landry MBOM",
   "founder.photoPlaceholder": "Portrait provisoire · photo à ajouter",
   "team.heading": "Notre équipe",
