@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useIntl } from "react-intl";
 import Container from "./Container";
 import { SITE_LINKS } from "./siteNavigation";
+import NewsletterForm from "./NewsletterForm";
 
 export default function Footer() {
   const intl = useIntl();
@@ -54,6 +55,7 @@ export default function Footer() {
               <li><Link className="text-white no-underline hover:underline" href="/contact">{t("nav.contact")}</Link></li>
               <li><Link className="text-white no-underline hover:underline" href="/news">{t("footer.newsletter")}</Link></li>
             </ul>
+            <NewsletterForm footer />
           </div>
         </div>
 

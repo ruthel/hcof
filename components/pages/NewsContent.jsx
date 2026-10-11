@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageSection from "../PageSection";
+import NewsletterForm from "../NewsletterForm";
 
 export default function NewsContent({ t }) {
   return (
@@ -16,16 +17,7 @@ export default function NewsContent({ t }) {
         <p>
           {t("pages.news.section1.text1")}
         </p>
-        <form action="https://formspree.io/f/YOUR_ID" method="post">
-          <input type="hidden" name="_subject" value={t("pages.news.section1.text2")} />
-          <label htmlFor="nl">
-            {t("pages.news.section1.text3")}
-          </label>
-          <input id="nl" name="email" type="email" required autoComplete="email" />
-          <button className="btn green" type="submit">
-            {t("pages.news.section1.text4")}
-          </button>
-        </form>
+        <NewsletterForm />
         <h2 className="mt-12">
           {t("pages.news.section1.text5")}
         </h2>

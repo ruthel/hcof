@@ -1,4 +1,10 @@
 export const FR_MESSAGES = {
+  "newsletter.label": "Votre adresse e-mail",
+  "newsletter.placeholder": "vous@exemple.com",
+  "newsletter.subscribe": "S’inscrire",
+  "newsletter.note": "Votre demande d’inscription sera transmise à HCOF. Vous pourrez demander votre désinscription à tout moment.",
+  "newsletter.request": "Je souhaite m’inscrire à la newsletter de HCOF et recevoir les nouvelles de l’association par e-mail.",
+  "newsletter.success": "Votre demande d’inscription a été transmise à HCOF.",
   "journey.foundation.title": "Fondation",
   "journey.foundation.description": "Si la mission le demande, HCOF pourra envisager de se structurer autour d'un patrimoine dédié, pour garantir sur le très long terme la continuité de son action et la confiance de ses partenaires.",
   "founder.portraitAlt": "Emplacement du portrait de Landry MBOM",

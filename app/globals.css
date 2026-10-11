@@ -59,6 +59,12 @@
 :root[data-theme="dark"] .contact-error { color: #FCA5A5; }
 
 select option { background: var(--color-hcof-paper); color: var(--color-hcof-text); }
+.newsletter-form { position: relative; gap: .75rem; }
+.newsletter-footer label { color: #F3E3BC; }
+.newsletter-footer input { color: #FFFFFF; border-color: #FFFFFF66; }
+.newsletter-footer input::placeholder { color: #FFFFFF99; }
+.newsletter-footer input:focus { border-color: #F3E3BC; }
+.newsletter-footer .newsletter-note { color: #FFFFFFB3; }
 
 .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .page-about section[data-section="4"] .localized-section { max-width: none; }
